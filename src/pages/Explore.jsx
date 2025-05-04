@@ -1,14 +1,20 @@
-
-
+import { useState } from "react";
+import image from "./../assets/hero1.WEBP";
 
 const Explore = () => {
-  return (
-    <>
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-      <main className="h-screen bg-amber-300 w-full flex justify-center items-center">
-        <p>Ini Explore</p>
-      </main>
-    </>
-  );
+  const handleMouseMove = (e) => {
+    const { clientX, clientY, currentTarget } = e;
+    const { width, height, left, top } = currentTarget.getBoundingClientRect();
+
+    const x = ((clientX - left) / width - 0.5) * 20; // range -10 to 10
+    const y = ((clientY - top) / height - 0.5) * 20; // range -10 to 10
+
+    setPosition({ x, y });
+  };
+  return <>
+  <p>Ini Explore</p>
+  </>
 };
 export default Explore;

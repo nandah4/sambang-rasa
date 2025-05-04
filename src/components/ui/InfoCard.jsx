@@ -1,20 +1,18 @@
 import { FaInfoCircle } from "react-icons/fa";
 import PropTypes from "prop-types";
 
-const InfoCard = ({ title, children, onIconClick }) => {
+const InfoCard = ({ title, children, icon }) => {
   return (
-    <div className="p-3 border border-slate-400 flex justify-center flex-col items-center relative rounded-xl">
-      <h3 className="font-montserrat text-center font-semibold text-xl mb-4">
-        {title}
-      </h3>
-      <p className="text-center font-montserrat text-[13px]">
-        {children}
-        <FaInfoCircle
-          size={20}
-          className="text-[#FEBA17] absolute top-3 right-3 md:top-5 md:right-5 cursor-pointer"
-          onClick={onIconClick}
-        />
-      </p>
+    <div className="grid grid-cols-5 p-2 relative ">
+      <div className="col-span-1 flex justify-center items-center">{icon}</div>
+      <div className="col-span-4  flex flex-col justify-start">
+        <h3 className="font-montserrat text-slate-700 font-semibold text-xl mb-4">
+          {title}
+        </h3>
+        <p className="text-start font-montserrat text-slate-500 text-[13px]">
+          {children}
+        </p>
+      </div>
     </div>
   );
 };
@@ -22,7 +20,6 @@ const InfoCard = ({ title, children, onIconClick }) => {
 InfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  onIconClick: PropTypes.func,
 };
 
 export default InfoCard;

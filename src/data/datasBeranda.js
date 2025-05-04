@@ -3,4 +3,13 @@ import Hero2 from "./../assets/hero1.WEBP";
 
 const imageData = [Hero1, Hero2];
 
-export default imageData
+const userTestimoni = [
+  {
+    fullName: "",
+    review: "",
+    region: "",
+    imageUrl: "",
+  },
+];
+
+export default imageData;

@@ -11,7 +11,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(() => scrollTop > 100);
+      setIsScrolled(() => scrollTop > 90);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full fixed z-50 ${
+      className={`w-full pl-3 fixed z-50 ${
         isScroller ? "bg-white shadow-xs h-22" : "bg-transparent h-24"
       }`}
     >
@@ -66,7 +66,7 @@ export default function Header() {
             </div>
           </section>
 
-          <div className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <div className="lg:hidden pr-3" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <FaTimes className="text-white" size={26} />
             ) : (

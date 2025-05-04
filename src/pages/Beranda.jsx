@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import imageData from "./../data/datasBeranda.js";
 import SectionHero2 from "./../assets/section2-hero.JPG";
+import icons from "./../assets/image.png";
 import { FaArrowDown } from "react-icons/fa6";
 import { FaInfoCircle } from "react-icons/fa";
 
@@ -23,20 +24,20 @@ const Beranda = () => {
       <main className="w-full flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="w-full">
-          <section className="h-[65vh] bg-amber-50 relative m-2 rounded-3xl overflow-hidden">
+          <section className="h-[80vh] bg-amber-50 relative m-2 rounded-3xl overflow-hidden">
             <img
               src={imageData[isImage]}
               className="w-full h-full object-cover"
             />
 
             <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
-            <div className="absolute z-10 top-0 right-0 left-0 mx-auto max-w-7xl h-full">
-              <div className="flex justify-center flex-col items-center h-full">
-                <h1 className="text-white font-montserrat font-medium text-3xl md:text-4xl text-center px-6 lg:px-0">
-                  Mengenal Wayang, Menyelami Warisan Budaya
+            <div className="absolute z-10 top-0 right-0 left-0 mx-auto max-w-6xl h-full">
+              <div className="flex justify-center flex-col items-start w-full h-full">
+                <h1 className="text-white max-w-3xl font-montserrat leading-10 md:leading-12 font-semibold text-4xl md:text-4xl text-start px-6 lg:px-0">
+                  Mengenal Wayang Kulit, Menyelami Warisan Budaya
                 </h1>
 
-                <p className="text-white font-montserrat text-center font-light text-[13px] md:text-sm mt-6 px-6 lg:px-0 max-w-3xl">
+                <p className="text-white max-w-xl leading-6 md:leading-8 font-montserrat text-start font-light text-[13px] mt-5 px-6 lg:px-0">
                   Wayang bukan sekadar hiburan tradisional—ia adalah cerminan
                   nilai, filosofi, dan sejarah bangsa yang telah hidup selama
                   berabad-abad. Melalui web ini, mari kita telusuri kekayaan
@@ -44,13 +45,26 @@ const Beranda = () => {
                   membentuk identitas budaya Indonesia.
                 </p>
 
-                <div
+                <div className="px-6 lg:px-0">
+                  <div
+                    className="bg-white px-5 cursor-pointer py-3  rounded-lg mt-5"
+                    onClick={() =>
+                      window.scrollTo({ top: 400, behavior: "smooth" })
+                    }
+                  >
+                    <p className="font-montserrat text-[12px] font-medium">
+                      Ketahui Lebih Banyak
+                    </p>
+                  </div>
+                </div>
+
+                {/* <div
                   onClick={() =>
                     window.scrollTo({ top: 320, behavior: "smooth" })
                   }
                   className="h-14 w-10 cursor-pointer z-10 bg-[#FEBA17]/80 flex justify-center items-center rounded-full mt-5 md:mt-8"
                 >
-                  {/* <p className="">Discover</p> */}
+                 
                   <motion.div
                     animate={{
                       y: [-5, 10, -5],
@@ -59,38 +73,23 @@ const Beranda = () => {
                   >
                     <FaArrowDown size={24} className="text-white" />
                   </motion.div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
         </div>
 
         {/* Explanation Section */}
-        <section className="w-full mt-10 ">
-          <div className="max-w-6xl mx-4 md:mx-auto flex gap-x-3 items-center mb-5">
-            <div className="md:w-40 w-15 h-1 bg-[#FEBA17] rounded-xl">
-
-            </div>
-            <h1 className="md:text-2xl text-xl font-medium font-montserrat">Sekilas Tentang Wayang</h1>
+        {/* <section className="w-full mt-10 ">
+          <div className="max-w-6xl mx-4 md:mx-auto flex justify-center gap-x-3 items-center mb-10">
+            <h1 className="md:text-2xl text-xl font-medium font-montserrat">
+              Sekilas Tentang Wayang Kulit
+            </h1>
           </div>
           <div className="max-h-[65vh] max-w-6xl mx-4 md:mx-auto">
-            <div className="h-full w-full grid grid-cols-1 md:grid-cols-3">
-              <div className="col-span-1 w-full h-[60vh] md:h-[65vh] overflow-hidden">
-                <div className="w-full h-[55vh]">
-                  <img
-                    src={SectionHero2}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex justify-center items-center">
-                  <p className="font-montserrat text-sm font-medium underline">
-                    Tokoh Punakawan (Petruk)
-                  </p>
-                </div>
-              </div>
-
+            <div className="h-full w-full  md:grid-cols-3">
               <div className="col-span-2 grid grid-cols-2 gap-3">
-                <InfoCard title={"UNESCO"} onIconClick={""}>
+                <InfoCard title={"UNESCO"} icon={<FaInfoCircle size={25} />}>
                   Diakui oleh UNESCO sebagai Warisan Budaya Tak Benda (
                   <span className="italic">Intangible Cultural Heritage</span>)
                   pada tahun 2003, dan kemudian diangkat sebagai "
@@ -122,43 +121,14 @@ const Beranda = () => {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* <section className="relative w-full" id="section2">
-          <div className="max-w-5xl xl:max-w-6xl shadow-md bg-white lg:h-[45vh] absolute top-[-80px] md:top-[-140px] left-0 right-0 mx-10 lg:mx-auto rounded-2xl">
-            <div className="w-full h-full grid grid-cols-1 md:grid-cols-12 px-6 md:px-10 py-7 md:py-3 overflow-hidden">
-              <div className="h-60 md:h-full w-full md:col-span-4 overflow-hidden">
-                <img
-                  src={SectionHero2}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              <div className="md:pl-10 h-full flex-col col-span-8 justify-center flex gap-y-2">
-                <div>
-                  <small className="font-montserrat text-xs">
-                    <span className="text-red-500 mr-1 font-semibold">*</span>
-                    Nama tokoh pada gambar disamping Semar
-                  </small>
-                </div>
-
-                <h1 className="text-2xl font-montserrat font-semibold mb-3">
-                  Sekilas Wayang Kulit
-                </h1>
-                <p className="font-montserrat text-sm text-justify leading-7">
-                  Wayang kulit adalah seni tradisional Jawa dan Bali yang
-                  berkembang sejak era Kerajaan Kahuripan. Cerita wayang diambil
-                  dari Ramayana, Mahabharata, serta kisah lokal dan religius.
-                  Pada 7 November 2003, wayang kulit diakui{" "}
-                  <span className="font-semibold line">UNESCO </span>
-                  sebagai Warisan Budaya Takbenda Dunia.
-                </p>
-              </div>
-            </div>
-          </div>
         </section> */}
 
-        <section className="h-dvh w-full"></section>
+        <section className="max-w-6xl h-[40vh] rounded-3xl bg-[#74512D] border mx-auto w-full overflow-hidden">
+          <div className="grid grid-cols-3 p-5">
+            <div className="col-span-1 border"></div>
+            <div className="col-span-2 border"></div>
+          </div>
+        </section>
 
         <section className="h-dvh w-full"></section>
       </main>
