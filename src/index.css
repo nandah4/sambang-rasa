@@ -1,16 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
+  --breakpoint-xs: 365px;
+  --breakpoint-md: 910px;
+  --breakpoint-lgs: 1160px;
+  /* --breakpoint-lg2 : 500px; */
 }
 
 /* text-[#393E46] */
 .nav-item {
-  @apply font-montserrat text-[13px] font-normal text-white
+  @apply font-montserrat text-[13px] font-medium;
 }
 
-
 .nav-item-active {
-  @apply font-montserrat text-[13px] font-medium text-[#FEBA17] border-b-2 px-1 pb-1 
+  @apply font-montserrat text-[13px]  border-b-[#FFB200] border-b-2 px-1 pb-1;
 }
