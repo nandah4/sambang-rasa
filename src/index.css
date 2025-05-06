@@ -5,9 +5,18 @@
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
   --breakpoint-xs: 365px;
+  --breakpoint-base: 600px;
+  --breakpoint-md1: 768px;
   --breakpoint-md: 910px;
   --breakpoint-lgs: 1160px;
   /* --breakpoint-lg2 : 500px; */
+}
+
+.title-color {
+  @apply text-gray-700;
+}
+.description-color {
+  @apply text-gray-500;
 }
 
 /* text-[#393E46] */
