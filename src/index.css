@@ -13,7 +13,7 @@
 }
 
 .title-color {
-  @apply text-gray-700;
+  @apply text-gray-800;
 }
 .description-color {
   @apply text-gray-500;

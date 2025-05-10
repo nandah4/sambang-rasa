@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import imageData from "./../data/datasBeranda.js";
+import { imageData, faqs } from "./../data/datasBeranda.js";
+
 import videoAsset from "./../assets/asset-video.mov";
 import {
   FaEarthEurope,
@@ -7,9 +8,11 @@ import {
   FaMapLocationDot,
 } from "react-icons/fa6";
 import Card from "../components/ui/Card.jsx";
+import { FaqItem } from "../components/ui/FaqItem.jsx";
 
 const Beranda = () => {
   const [isImage, setIsImage] = useState(0);
+  const [faqNums, setFaqNums] = useState(0);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -18,6 +21,13 @@ const Beranda = () => {
 
     return () => clearTimeout(timeOut);
   }, [isImage]);
+
+  const onFaqActive = (id) => {
+    setFaqNums((nowId) => (nowId == id ? 0 : id));
+  };
+
+  const leftFaqs = faqs.filter((e) => Number(e.id) <= 3);
+  const rightFaqs = faqs.filter((e) => Number(e.id) > 3);
 
   return (
     <>
@@ -61,7 +71,7 @@ const Beranda = () => {
             </div>
           </section>
         </div>
-
+        {/* Sekilas Section */}
         <section className="max-w-6xl my-14 mx-auto py-5">
           <h2 className="text-2xl mx-3 title-color font-montserrat font-medium text-center mb-5 md:mb-9">
             Sekilas Tentang Wayang
@@ -99,17 +109,17 @@ const Beranda = () => {
             </Card>
           </div>
         </section>
-
+        {/* Mengajak Section  */}
         <section className="w-full ">
           <div className="md:mx-auto md:max-w-4xl lg:max-w-6xl h-[57vh] md:rounded-2xl bg-[#74512D] w-full overflow-hidden mt-2">
             <div className="relative w-full h-full">
               <div className="absolute w-full h-full bg-[#4E1F00]/80">
                 <div className="md1:grid-cols-5 md1:grid h-full">
                   <div className="col-span-2 flex items-end p-5 md1:p-14 justify-start border-amber-200">
-                    <p className="text-white font-montserrat text-[12px] font-me">
+                    {/* <p className="text-white font-montserrat text-[12px] font-me">
                       Pertunjukan Wayang Kulit oleh{" "}
                       <span className="underline">Dalang Ki Seno Nugroho</span>
-                    </p>
+                    </p> */}
                   </div>
                   <div className="md1:col-span-3 flex flex-col p-5 md1:p-14">
                     <p className="font-montserrat leading-8 font-semibold text-white text-[18px]">
@@ -138,6 +148,38 @@ const Beranda = () => {
                 loop
                 muted
               ></video>
+            </div>
+          </div>
+        </section>
+        {/* FAQ Section */}
+        <section className="w-full my-22">
+          <div className="max-w-6xl mx-4 xl:mx-auto ">
+            <h1 className="text-2xl font-montserrat text-center mb-8">
+              Frequently Answer Questions
+            </h1>
+
+            <div className="grid grid-cols-1 base:grid-cols-2 gap-x-8">
+              <div className="col-span-1 w-full ">
+                {leftFaqs.map((e) => (
+                  <FaqItem
+                    key={e.id}
+                    data={e}
+                    onClick={onFaqActive}
+                    isActive={faqNums}
+                  />
+                ))}
+              </div>
+
+              <div className="col-span-1 w-full">
+                {rightFaqs.map((e) => (
+                  <FaqItem
+                    key={e.id}
+                    data={e}
+                    onClick={onFaqActive}
+                    isActive={faqNums}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

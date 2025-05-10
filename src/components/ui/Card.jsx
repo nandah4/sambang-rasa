@@ -1,6 +1,3 @@
-import { FaInfoCircle } from "react-icons/fa";
-import PropTypes from "prop-types";
-
 const Card = ({ title, children, icon, styling }) => {
   return (
     <>
@@ -18,5 +15,6 @@ const Card = ({ title, children, icon, styling }) => {
     </>
   );
 };
+
 
 export default Card;
