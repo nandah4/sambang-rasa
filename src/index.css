@@ -12,11 +12,19 @@
   /* --breakpoint-lg2 : 500px; */
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .title-color {
   @apply text-gray-800;
 }
 .description-color {
-  @apply text-gray-500;
+  @apply text-gray-600;
 }
 
 /* text-[#393E46] */

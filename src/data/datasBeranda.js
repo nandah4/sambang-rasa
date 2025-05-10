@@ -1,6 +1,10 @@
 import Hero1 from "./../assets/hero-section.webp";
 import Hero2 from "./../assets/hero1.WEBP";
 
+import Event1 from "./../assets/event/event-1.jpg";
+import Event2 from "./../assets/event/event-2.jpg";
+import Event3 from "./../assets/event/event-3.jpg";
+
 export const imageData = [Hero1, Hero2];
 
 export const faqs = [
@@ -39,6 +43,22 @@ export const faqs = [
     question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit mollitia provident quibusdam aliquid perspiciatis ipsum similique deserunt dolorem ex unde?",
+  },
+];
+
+export const dataEvents = [
+  {
+    image: Event1,
+    title:
+      "Wayang Jogja Night Carnival 2024",
+  },
+  {
+    image: Event2,
+    title: "Festival Wayang Kulit Internasional di Yogyakarta",
+  },
+  {
+    image: Event3,
+    title: "Festival Dalang Anak dan Dalang Remaja tahun 2021 di Yogyakarta",
   },
 ];
 

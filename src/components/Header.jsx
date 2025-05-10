@@ -21,11 +21,11 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full pl-3 fixed z-50 ${
+      className={`w-full fixed z-50 ${
         isScroller ? "bg-white shadow-xs h-22" : "bg-transparent h-24"
       }`}
     >
-      <div className="flex items-center justify-center h-full px-5 top-0 right-0 left-0">
+      <div className="flex items-center justify-center h-full px-3 top-0 right-0 left-0">
         <div className="flex justify-between max-w-6xl w-full items-center">
           {/* Logo */}
           <section className="flex gap-x-3 items-center justify-center">
@@ -66,7 +66,7 @@ export default function Header() {
             </div>
           </section>
 
-          <div className="lg:hidden pr-3" onClick={() => setIsOpen(!isOpen)}>
+          <div className="lg:hidden " onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <FaTimes className="text-white" size={26} />
             ) : (

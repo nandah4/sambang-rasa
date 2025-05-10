@@ -1,19 +1,19 @@
-import { FaPlus } from "react-icons/fa6";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 
 export const FaqItem = ({ data, isActive, onClick }) => {
   return (
-    <div className="border border-gray-300 rounded-2xl p-4 w-full mb-5">
+    <div className="border border-gray-300 rounded-xl p-4 w-full mb-5">
       <div className="w-full grid grid-cols-12">
         <div className="col-span-11">
           <p
-            className={`text-sm font-montserrat description-color ${
-              isActive == data.id ? "font-medium title-color" : ""
+            className={`text-sm font-medium font-montserrat description-color ${
+              isActive == data.id ? " title-color" : ""
             }`}
           >
             {data.question}
           </p>
           {isActive == data.id ? (
-            <p className="text-sm leading-6 font-montserrat py-4 description-color">
+            <p className="text-sm leading-6 font-montserrat py-2 description-color">
               {data.answer}
             </p>
           ) : null}
@@ -24,7 +24,11 @@ export const FaqItem = ({ data, isActive, onClick }) => {
             data.id == isActive ? "text-amber-300" : ""
           }`}
         >
-          <FaPlus size={19} className="cursor-pointer" />
+          {isActive != data.id ? (
+            <FaPlus size={19} className="cursor-pointer" />
+          ) : (
+            <FaMinus size={19} className="cursor-pointer" />
+          )}
         </div>
       </div>
     </div>
