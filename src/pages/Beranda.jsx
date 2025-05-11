@@ -1,5 +1,10 @@
-import { useEffect, useState, useRef } from "react";
-import { imageData, faqs, dataEvents } from "./../data/datasBeranda.js";
+import { useEffect, useState, useRef, React } from "react";
+import {
+  imageData,
+  faqs,
+  dataEvents,
+  testimonials,
+} from "./../data/datasBeranda.js";
 
 import videoAsset from "./../assets/asset-video.mov";
 import {
@@ -30,8 +35,8 @@ const Beranda = () => {
     setFaqNums((nowId) => (nowId == id ? 0 : id));
   };
 
-  const leftFaqs = faqs.filter((e) => Number(e.id) <= 3);
-  const rightFaqs = faqs.filter((e) => Number(e.id) > 3);
+  const leftFaqs = faqs.filter((e) => Number(e.id) <= 2);
+  const rightFaqs = faqs.filter((e) => Number(e.id) > 2);
 
   const scroll = (dir) => {
     if (scrollRef.current) {
@@ -46,7 +51,7 @@ const Beranda = () => {
     <>
       <main className="w-full">
         {/* Hero Section */}
-        <section className="h-[80vh] border border-red-500 bg-amber-50 relative overflow-hidden">
+        <section className="h-[80vh] bg-amber-50 relative overflow-hidden">
           <img
             src={imageData[isImage]}
             className="w-full h-full object-cover"
@@ -84,7 +89,7 @@ const Beranda = () => {
         </section>
 
         {/* Sekilas Section */}
-        <section className="max-w-7xl my-20 border mx-auto px-3 xl:px-0">
+        <section className="max-w-7xl my-20  mx-auto px-3 xl:px-0">
           <h2 className="text-3xl font-montserrat text-center mb-9 md1:mb-14">
             Fakta Menarik Tentang Wayang
           </h2>
@@ -157,7 +162,7 @@ const Beranda = () => {
               >
                 <div className="flex gap-x-5 w-max items-center justify-center h-full md1:pl-5">
                   {dataEvents.map((e) => (
-                    <div className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-lg">
+                    <div key={e.title} className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-lg">
                       <img
                         src={e.image}
                         className="w-full h-full object-cover"
@@ -178,18 +183,18 @@ const Beranda = () => {
         </section>
 
         {/* Mengajak Section  */}
-        <section className="w-full border px-3 xl:px-0 mb-20">
+        <section className="w-full px-3 xl:px-0 mb-25">
           <div className="mx-auto md1:max-w-7xl h-[57vh] rounded-xl md1:rounded-3xl bg-[#74512D] overflow-hidden">
             <div className="relative w-full h-full">
-              <div className="absolute w-full h-full bg-[#4E1F00]/80">
+              <div className="absolute w-full h-full bg-[#4E1F00]/90">
                 <div className="base:grid-cols-5 base:grid h-full">
-                  <div className="col-span-2 border border-amber-400">
+                  <div className="col-span-2 ">
                     {/* <p className="text-white font-montserrat text-[12px] font-me">
                       Pertunjukan Wayang Kulit oleh{" "}
                       <span className="underline">Dalang Ki Seno Nugroho</span>
                     </p> */}
                   </div>
-                  <div className="base:col-span-3 flex flex-col p-8 md1:p-14 border border-red-500">
+                  <div className="base:col-span-3 flex flex-col p-8 md1:p-14">
                     <p className="font-montserrat leading-8 font-medium text-white text-base base:text-[18px]">
                       "Mari kenali lebih dekat seni pertunjukan wayang dan
                       pelajari bagaimana cerita, suara, dan gerak bersatu
@@ -210,6 +215,56 @@ const Beranda = () => {
                 loop
                 muted
               ></video>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimoni Action */}
+        <section className="max-w-full mb-20 md1:h-[65vh] brder">
+          <div className="max-w-7xl w-full h-full mx-auto px-3 xl:px-0">
+            <div className="grid grid-cols-1 md1:grid-cols-6 h-full">
+              <div className="col-span-4 h-[50vh] md1:h-auto  grid grid-cols-1 lgxs:grid-cols-2 gap-6 pr-0 lgxs:pr-6 pb-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+                {testimonials.map((e) => (
+                  <div
+                    className={` ${
+                      e.id == 1 ? "bg-[#4E1F00]/90" : ""
+                    } h-[28vh] rounded-xl shadow-lg  flex flex-col p-5 justify-between`}
+                  >
+                    <p
+                      className={`font-montserrat text-sm ${
+                        e.id == 1 ? "text-white" : "title-color"
+                      } leading-6`}
+                    >
+                      <span className="font-montserrat text-2xl font-semibold">
+                        "{" "}
+                      </span>
+                      {e.testimonial}
+                    </p>
+                    <div>
+                      <p
+                        className={`font-montserrat text-sm font-medium ${
+                          e.id == 1 ? "text-white" : "title-color"
+                        }`}
+                      >
+                        {e.name}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="col-span-2 flex flex-col justify-center items-start w-full p-5">
+                <h2 className="font-montserrat text-3xl leading-9">
+                  Cerita dari Teman-Teman Rasa
+                </h2>
+                <p className="font-montserrat text-start text-[15px] mt-5 leading-7 title-color">
+                  Kami percaya setiap cerita punya kesan. Inilah pendapat mereka
+                  yang telah merasakan pengalaman belajar budaya lewat Sambang
+                  Rasa.
+                </p>
+                <p className="font-montserrat text-sm mt-5 font-semibold title-color">
+                  {testimonials.length} Ulasan.
+                </p>
+              </div>
             </div>
           </div>
         </section>

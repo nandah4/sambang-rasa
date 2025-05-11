@@ -6,14 +6,14 @@ export const FaqItem = ({ data, isActive, onClick }) => {
       <div className="w-full grid grid-cols-12">
         <div className="col-span-11">
           <p
-            className={`text-sm font-medium font-montserrat description-color ${
+            className={`text-[15px] font-montserrat description-color ${
               isActive == data.id ? " title-color" : ""
             }`}
           >
             {data.question}
           </p>
           {isActive == data.id ? (
-            <p className="text-sm leading-6 font-montserrat py-2 description-color">
+            <p className="text-[15px] leading-6 font-montserrat py-2 description-color">
               {data.answer}
             </p>
           ) : null}

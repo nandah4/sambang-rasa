@@ -8,40 +8,39 @@ import Event3 from "./../assets/event/event-3.jpg";
 export const imageData = [Hero1, Hero2];
 
 export const faqs = [
+  // {
+  //   id: "1",
+  //   question: "Apa itu Sambang Rasa?",
+  //   answer:
+  //     "Website ini merupakan platform edukatif yang mengajak pengunjung untuk mengenal, mempelajari, dan melestarikan budaya wayang—mulai dari sejarah, tokoh-tokohnya, hingga seni menjadi dalang.",
+  // },
   {
     id: "1",
-    question: "Apa itu Sambang Rasa?",
-    answer:
-      "Website ini merupakan platform edukatif yang mengajak pengunjung untuk mengenal, mempelajari, dan melestarikan budaya wayang—mulai dari sejarah, tokoh-tokohnya, hingga seni menjadi dalang.",
-  },
-  {
-    id: "2",
     question: "Apakah belajar di Sambang Rasa gratis?",
     answer:
       "Sebagian besar konten di website ini, seperti artikel sejarah dan cerita-cerita wayang, dapat diakses secara gratis. Untuk bagian pembelajaran mendalang, kami menyediakan dua pilihan: akses gratis untuk materi dasar, dan akses berbayar untuk kelas lanjutan yang lebih mendalam dan dipandu oleh dalang profesional.",
   },
+  // {
+  //   id: "2",
+  //   question: "Apakah saya bisa belajar menjadi dalang",
+  //   answer:
+  //     "Tentu! Di website ini, kamu tidak hanya belajar dasar-dasar mengenai sejarah dan cerita, tapi juga bisa mencari sanggar seni terdekat untuk belajar langsung dari para dalang. Kami menyediakan fitur pencarian lokasi sanggar, agar kamu bisa mulai belajar sesuai minat dan kebutuhan—baik secara gratis maupun melalui program pelatihan berbayar.",
+  // },
   {
-    id: "3",
-    question: "Apakah saya bisa belajar menjadi dalang",
-    answer:
-      "Tentu! Di website ini, kamu tidak hanya belajar dasar-dasar mengenai sejarah dan cerita, tapi juga bisa mencari sanggar seni terdekat untuk belajar langsung dari para dalang. Kami menyediakan fitur pencarian lokasi sanggar, agar kamu bisa mulai belajar sesuai minat dan kebutuhan—baik secara gratis maupun melalui program pelatihan berbayar.",
-  },
-  {
-    id: "4",
+    id: "2",
     question: "Apakah website ini hanya membahas wayang Jawa?",
     answer:
       "Fokus utama kami adalah wayang Jawa karena kekayaan falsafah dan karakternya yang khas. Namun, kami juga berencana mengembangkan konten untuk jenis wayang lain.",
   },
   {
-    id: "5",
+    id: "3",
     question: "Apakah saya bisa berkontribusi di website ini?",
     answer:
       "Tentu! Kamu bisa berkontribusi dengan membagikan pengalaman pribadi tentang dunia wayang melalui testimoni. Kami terbuka untuk kolaborasi demi pelestarian budaya bersama.",
   },
   {
-    id: "6",
-    question:
-      "Saya belum tahu apa-apa soal wayang, harus mulai dari mana?",
+    id: "4",
+    question: "Saya belum tahu apa-apa soal wayang, harus mulai dari mana?",
     answer:
       "Kamu bisa mulai dari bagian 'Pengenalan Wayang' yang berisi sejarah singkat, tokoh-tokoh utama, dan jenis-jenis wayang.",
   },
@@ -62,13 +61,35 @@ export const dataEvents = [
   },
 ];
 
-// export default imageData;
-
-// const userTestimoni = [
-//   {
-//     fullName: "",
-//     review: "",
-//     region: "",
-//     imageUrl: "",
-//   },
-// ];
+export const testimonials = [
+  {
+    id: 1,
+    name: "Raka Putra",
+    testimonial:
+      "Sambang Rasa benar-benar membuka wawasan saya tentang filosofi wayang. Saya jadi lebih menghargai budaya Jawa dan tertarik belajar mendalang 😁",
+  },
+  {
+    id: 2,
+    name: "Tiara Anjani",
+    testimonial:
+      "Awalnya gw cuma mau tahu cerita wayang, eh tapi ada kelas mendalangnya loh. Seru banget!",
+  },
+  {
+    id: 3,
+    name: "Fajar Rahman",
+    testimonial:
+      "Tampilan websitenya menarik dan informatif. Saya suka bagian pencarian sanggar karena saya bisa langsung tahu tempat belajar terdekat.",
+  },
+  {
+    id: 4,
+    name: "Sinta Lestari",
+    testimonial:
+      "Saya bukan dari Jawa, tapi penjelasan di Sambang Rasa sangat mudah dipahami.",
+  },
+  {
+    id: 4,
+    name: "Sinta Lestari",
+    testimonial:
+      "Saya bukan dari Jawa, tapi penjelasan di Sambang Rasa sangat mudah dipahami.",
+  },
+];
