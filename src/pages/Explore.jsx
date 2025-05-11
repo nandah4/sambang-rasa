@@ -15,6 +15,9 @@ const Explore = () => {
   };
   return <>
   <p>Ini Explore</p>
+  <main className="w-full h-dvh"></main>
+  <main className="w-full h-dvh"></main>
+  <main className="w-full h-dvh"></main>
   </>
 };
 export default Explore;

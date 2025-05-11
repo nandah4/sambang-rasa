@@ -2,7 +2,7 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 
 export const FaqItem = ({ data, isActive, onClick }) => {
   return (
-    <div className="border border-gray-300 rounded-xl p-4 w-full mb-5">
+    <div className="border border-gray-300 rounded-xl p-4 w-full mb-4">
       <div className="w-full grid grid-cols-12">
         <div className="col-span-11">
           <p
@@ -20,8 +20,8 @@ export const FaqItem = ({ data, isActive, onClick }) => {
         </div>
         <div
           onClick={() => onClick(Number(data.id))}
-          className={`col-span-1 flex justify-end text-[#4E1F00] items-start hover:text-amber-300 ${
-            data.id == isActive ? "text-amber-300" : ""
+          className={`col-span-1 flex justify-end text-[#4E1F00] items-start hover:text-[#ffb200] ${
+            data.id == isActive ? "text-[#ffb200]" : ""
           }`}
         >
           {isActive != data.id ? (

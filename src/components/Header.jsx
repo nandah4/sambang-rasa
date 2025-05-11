@@ -1,5 +1,5 @@
 import NavbarMenu from "../components/ui/NavbarMenu";
-import Logo from "../assets/Group3.png";
+import Logo from "../assets/logo/logo-final-banget.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { FaRegUser } from "react-icons/fa6";
@@ -11,7 +11,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(() => scrollTop > 90);
+      setIsScrolled(() => scrollTop > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,15 +21,15 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full fixed z-50 ${
-        isScroller ? "bg-white shadow-xs h-22" : "bg-transparent h-24"
+      className={`w-full h-[86px] fixed z-50 ${
+        isScroller ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-center h-full px-3 top-0 right-0 left-0">
-        <div className="flex justify-between max-w-6xl w-full items-center">
+        <div className="flex justify-between max-w-7xl w-full items-center">
           {/* Logo */}
-          <section className="flex gap-x-3 items-center justify-center">
-            <div className="h-12 w-12 overflow-hidden">
+          <section className="flex gap-x-2 items-center justify-center">
+            <div className="h-14 w-14 overflow-hidden">
               <img
                 src={Logo}
                 alt="Sambang Rasa Logo"
@@ -37,52 +37,64 @@ export default function Header() {
               />
             </div>
             <h2
-              className={`text-xl font-semibold font-montserrat ${
-                isScroller ? "text-[#393E46]" : "text-white"
+              className={`text-xl hidden xs:block font-medium font-montserrat ${
+                isScroller ? "title-color" : "text-white"
               }`}
             >
-              Sambang Rasa.
+              Sambang Rasa
             </h2>
           </section>
 
           {/* Navbar Menu */}
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <NavbarMenu scroller={isScroller}></NavbarMenu>
           </div>
 
           {/* Register Button */}
-          <section className="hidden lg:block">
+          <section className="hidden md:block">
             <div className="group cursor-pointer border-slate-300 transition-all duration-300 rounded-md w-32 flex justify-center items-center gap-x-3">
               <p
-                className={`font-montserrat text-[13px] font-medium group-hover:text-[#FEBA17] ${
-                  isScroller ? "text-[#393E46]" : "text-white"
+                className={`font-montserrat group-hover:font-medium text-[13px] ${
+                  isScroller ? "title-color" : "text-white"
                 }`}
               >
                 Register
               </p>
-              <div className="bg-white rounded-lg p-2 group-hover:bg-[#FEBA17]">
-                <FaRegUser className="text-[#393E46] text-base group-hover:text-white" />
+              <div className="bg-white rounded-md p-2 group-hover:bg-[#FFB200] ">
+                <FaRegUser
+                  size={17}
+                  className="text-gray-800 text-base group-hover:text-white"
+                />
               </div>
             </div>
           </section>
 
-          <div className="lg:hidden " onClick={() => setIsOpen(!isOpen)}>
+          <div
+            className="md:hidden cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? (
-              <FaTimes className="text-white" size={26} />
+              <FaTimes
+                className={`${isScroller ? "title-color" : "text-white"}`}
+                size={23}
+              />
             ) : (
-              <FaBars className="text-white" size={26} />
+              <FaBars
+                className={`${isScroller ? "title-color" : "text-white"}`}
+                size={23}
+              />
             )}
           </div>
 
           <div
-            className={`px-2 lg:hidden absolute top-20 left-0 w-full transition-all duration-500 ${
+            className={`px-3 md:hidden absolute top-24 left-0 w-full transition-all duration-500 ${
               isOpen ? "block" : "hidden"
             }`}
           >
-            <div className="flex flex-col-reverse gap-y-3 w-full px-5 py-5 bg-[#4E1F00] rounded-lg">
-              <NavbarMenu></NavbarMenu>
-              <section>
-                <p className="font-montserrat text-sm font-medium">Register</p>
+            <div className="flex flex-col-reverse gap-y-3 w-full px-5 py-5 bg-white rounded-lg shadow-lg">
+              <NavbarMenu isOpen={isOpen} />
+              <section className="border-b border-b-gray-300 pb-3">
+                <p className="font-montserrat text-center text-sm">Register</p>
               </section>
             </div>
           </div>

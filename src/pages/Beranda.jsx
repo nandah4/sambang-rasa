@@ -8,6 +8,7 @@ import {
   FaMapLocationDot,
   FaArrowRight,
   FaArrowLeft,
+  FaArrowDown,
 } from "react-icons/fa6";
 import Card from "../components/ui/Card.jsx";
 import { FaqItem } from "../components/ui/FaqItem.jsx";
@@ -43,50 +44,51 @@ const Beranda = () => {
 
   return (
     <>
-      <main className="w-full flex flex-col justify-center items-center">
+      <main className="w-full">
         {/* Hero Section */}
-        <div className="w-full">
-          <section className="h-[80vh] bg-amber-50 relative overflow-hidden">
-            <img
-              src={imageData[isImage]}
-              className="w-full h-full object-cover"
-            />
+        <section className="h-[80vh] border border-red-500 bg-amber-50 relative overflow-hidden">
+          <img
+            src={imageData[isImage]}
+            className="w-full h-full object-cover"
+          />
 
-            <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
-            <div className="absolute z-10 top-0 right-0 left-0 mx-auto max-w-6xl h-full">
-              <div className="flex justify-center flex-col items-start w-full h-full">
-                <h1 className="text-white max-w-3xl font-montserrat leading-10 md:leading-12 font-semibold text-2xl base:text-3xl md:text-4xl text-start px-6 lg:px-0">
-                  Mengenal Wayang Kulit, Menyelami Warisan Budaya
-                </h1>
+          <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
+          <div className="absolute z-10 top-0 right-0 left-0 mx-auto max-w-7xl h-full px-3 xl:px-0">
+            <div className="flex justify-center flex-col items-start w-full h-full">
+              <h1 className="text-white md1:max-w-4xl font-montserrat leading-10 md1:leading-14 font-semibold text-3xl md1:text-4xl text-start">
+                Mengenal Wayang Kulit, Menyelami Salah Satu Warisan Budaya di
+                Indonesia.
+              </h1>
 
-                <p className="text-white max-w-xl leading-6 md:leading-8 font-montserrat text-start font-light text-[13px] mt-5 px-6 lg:px-0">
-                  Wayang bukan sekadar hiburan tradisional—ia adalah cerminan
-                  nilai, filosofi, dan sejarah bangsa yang telah hidup selama
-                  berabad-abad.
+              <p className="text-white md1:max-w-xl leading-6 md1:leading-8 font-montserrat text-start text-[13px] md1:text-sm mt-5">
+                Wayang bukan sekadar hiburan tradisional—ia adalah cerminan
+                nilai, filosofi, dan sejarah bangsa yang telah hidup selama
+                berabad-abad.
+              </p>
+              <div
+                className="bg-white group  px-3 md1:px-5 cursor-pointer py-3 md1:py-4 rounded-md md1:rounded-xl mt-7 gap-x-4 flex items-center"
+                onClick={() =>
+                  window.scrollTo({ top: 480, behavior: "smooth" })
+                }
+              >
+                <p className="font-montserrat title-color text-[12px] md1:text-[13px] font-medium">
+                  Jelajahi Selengkapnya
                 </p>
-
-                <div className="px-6 lg:px-0">
-                  <div
-                    className="bg-white px-5 cursor-pointer py-3 rounded-md mt-7"
-                    onClick={() =>
-                      window.scrollTo({ top: 420, behavior: "smooth" })
-                    }
-                  >
-                    <p className="font-montserrat text-[12px] font-medium">
-                      Ketahui Lebih Banyak
-                    </p>
-                  </div>
-                </div>
+                <FaArrowDown
+                  size={17}
+                  className=" group-hover:text-[#ffb200] text-gray-700"
+                />
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
         {/* Sekilas Section */}
-        <section className="max-w-6xl my-16 mx-auto py-5">
-          <h2 className="text-2xl mx-3 title-color font-montserrat text-center mb-5 md:mb-9">
-            Sekilas Tentang Wayang
+        <section className="max-w-7xl my-20 border mx-auto px-3 xl:px-0">
+          <h2 className="text-3xl font-montserrat text-center mb-9 md1:mb-14">
+            Fakta Menarik Tentang Wayang
           </h2>
-          <div className=" w-full h-full grid grid-cols-1 md1:grid-cols-3 gap-y-7 md1:gap-x-5">
+          <div className="w-full h-full grid grid-cols-1 base:grid-cols-2 md:grid-cols-3 gap-y-7 base:gap-y-3 gap-x-3 md1:gap-x-12">
             <Card
               title={"UNESCO"}
               icon={<FaEarthEurope size={27} className="text-white" />}
@@ -119,52 +121,10 @@ const Beranda = () => {
             </Card>
           </div>
         </section>
-        {/* Mengajak Section  */}
-        <section className="w-full ">
-          <div className="md:mx-auto md:max-w-4xl lg:max-w-6xl h-[57vh] md:rounded-2xl bg-[#74512D] w-full overflow-hidden mt-2">
-            <div className="relative w-full h-full">
-              <div className="absolute w-full h-full bg-[#4E1F00]/80">
-                <div className="md1:grid-cols-5 md1:grid h-full">
-                  <div className="col-span-2 flex items-end p-5 md1:p-14 justify-start border-amber-200">
-                    {/* <p className="text-white font-montserrat text-[12px] font-me">
-                      Pertunjukan Wayang Kulit oleh{" "}
-                      <span className="underline">Dalang Ki Seno Nugroho</span>
-                    </p> */}
-                  </div>
-                  <div className="md1:col-span-3 flex flex-col p-5 md1:p-14">
-                    <p className="font-montserrat leading-8 font-semibold text-white text-[18px]">
-                      Mari kenali lebih dekat seni pertunjukan wayang dan
-                      pelajari bagaimana cerita, suara, dan gerak bersatu
-                      menciptakan warisan budaya yang hidup hingga kini.
-                    </p>
-                    <div className=" mt-5 md:mt-10">
-                      <p className="text-white font-medium font-montserrat text-sm">
-                        <span className="underline cursor-pointer">
-                          Explore
-                        </span>{" "}
-                        atau{" "}
-                        <span className="underline cursor-pointer">
-                          Belajar Menjadi Dalang
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <video
-                className="w-full h-full object-cover loop"
-                src={videoAsset}
-                autoPlay
-                loop
-                muted
-              ></video>
-            </div>
-          </div>
-        </section>
 
         {/* News Event */}
-        <section className="max-w-full w-full md1:h-[80vh] my-20">
-          <div className="mx-4 lg:mx-auto max-w-6xl h-full ">
+        <section className="max-w-full w-full md1:h-[80vh] px-3 xl:px-0 mt-10 mb-20">
+          <div className="mx-auto max-w-7xl h-full ">
             <div className="md1:grid md1:grid-cols-5 h-full">
               <div className="col-span-2 flex justify-center flex-start  flex-col">
                 <h1 className="font-montserrat text-3xl w-10/12 leading-9">
@@ -176,18 +136,18 @@ const Beranda = () => {
                   akbar—temukan acara terdekat dan jadilah bagian dari
                   pelestarian warisan budaya Indonesia.
                 </p>
-                <div className="flex gap-x-5 my-5 md1:mt-8">
+                <div className="flex gap-x-5 my-8">
                   <div
                     onClick={() => scroll("left")}
-                    className="bg-[#4E1F00]/80 hover:bg-[#4E1F00] cursor-pointer h-12 w-12 rounded-full flex justify-center items-center"
+                    className="bg-[#4E1F00]/70 hover:bg-[#4E1F00] cursor-pointer h-12 w-12 rounded-full flex justify-center items-center"
                   >
-                    <FaArrowLeft size={20} className="text-white" />
+                    <FaArrowLeft size={17} className="text-white" />
                   </div>
                   <div
                     onClick={() => scroll("right")}
-                    className="bg-[#4E1F00]/80 hover:bg-[#4E1F00] cursor-pointer h-12 w-12 rounded-full flex justify-center items-center"
+                    className="bg-[#4E1F00]/70 hover:bg-[#4E1F00] cursor-pointer h-12 w-12 rounded-full flex justify-center items-center"
                   >
-                    <FaArrowRight size={20} className=" text-white" />
+                    <FaArrowRight size={17} className=" text-white" />
                   </div>
                 </div>
               </div>
@@ -195,9 +155,9 @@ const Beranda = () => {
                 ref={scrollRef}
                 className="col-span-3 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
               >
-                <div className="flex gap-x-5 w-max items-center justify-center h-full pl-5">
+                <div className="flex gap-x-5 w-max items-center justify-center h-full md1:pl-5">
                   {dataEvents.map((e) => (
-                    <div className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-md">
+                    <div className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-lg">
                       <img
                         src={e.image}
                         className="w-full h-full object-cover"
@@ -217,14 +177,51 @@ const Beranda = () => {
           </div>
         </section>
 
+        {/* Mengajak Section  */}
+        <section className="w-full border px-3 xl:px-0 mb-20">
+          <div className="mx-auto md1:max-w-7xl h-[57vh] rounded-xl md1:rounded-3xl bg-[#74512D] overflow-hidden">
+            <div className="relative w-full h-full">
+              <div className="absolute w-full h-full bg-[#4E1F00]/80">
+                <div className="base:grid-cols-5 base:grid h-full">
+                  <div className="col-span-2 border border-amber-400">
+                    {/* <p className="text-white font-montserrat text-[12px] font-me">
+                      Pertunjukan Wayang Kulit oleh{" "}
+                      <span className="underline">Dalang Ki Seno Nugroho</span>
+                    </p> */}
+                  </div>
+                  <div className="base:col-span-3 flex flex-col p-8 md1:p-14 border border-red-500">
+                    <p className="font-montserrat leading-8 font-medium text-white text-base base:text-[18px]">
+                      "Mari kenali lebih dekat seni pertunjukan wayang dan
+                      pelajari bagaimana cerita, suara, dan gerak bersatu
+                      menciptakan warisan budaya yang hidup hingga kini."
+                    </p>
+                    <div className="mt-6 md1:mt-10">
+                      <p className="text-white cursor-pointer underline font-medium font-montserrat text-sm">
+                        Explore Yuk!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <video
+                className="w-full h-full object-cover loop"
+                src={videoAsset}
+                autoPlay
+                loop
+                muted
+              ></video>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
-        <section className="w-full mb-20">
-          <div className="max-w-6xl mx-4 xl:mx-auto ">
-            <h1 className="text-2xl font-montserrat title-color text-center mb-9">
+        <section className="w-full mb-20 px-3 xl:px-0">
+          <div className="max-w-7xl xl:mx-auto ">
+            <h1 className="text-2xl font-montserrat title-color text-center mb-9 md1:mb-14">
               Frequently Answer Questions (FAQ)
             </h1>
 
-            <div className="grid grid-cols-1 base:grid-cols-2 gap-x-8">
+            <div className="grid grid-cols-1 base:grid-cols-2 gap-x-10">
               <div className="col-span-1 w-full ">
                 {leftFaqs.map((e) => (
                   <FaqItem

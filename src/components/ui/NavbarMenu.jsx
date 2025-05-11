@@ -3,16 +3,26 @@ import { NavLink, Link } from "react-router";
 const NavbarMenu = (props) => {
   return (
     <>
-      <nav>
-        <ul className="flex flex-col md:flex-row  md:justify-between gap-4 md:gap-14">
+      <nav className="">
+        <ul className="flex flex-col md:flex-row  md:justify-between gap-y-6 md:gap-14">
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
                 ? `nav-item-active ${
-                    props.scroller ? "text-[#393E46]" : "text-white"
+                    props.scroller
+                      ? "title-color nav-item-active-border"
+                      : props.isOpen
+                      ? "title-color font-medium text-center"
+                      : "nav-item-active-border text-white"
                   }`
-                : `nav-item ${props.scroller ? "text-[#393E46]" : "text-white"}`
+                : `nav-item ${
+                    props.scroller
+                      ? "title-color"
+                      : props.isOpen
+                      ? "title-color text-center"
+                      : "text-white"
+                  }`
             }
           >
             Beranda
@@ -23,9 +33,19 @@ const NavbarMenu = (props) => {
             className={({ isActive }) =>
               isActive
                 ? `nav-item-active ${
-                    props.scroller ? "text-[#393E46]" : "text-white"
+                    props.scroller
+                      ? "title-color  nav-item-active-border"
+                      : props.isOpen
+                      ? "title-color font-medium  text-center"
+                      : "nav-item-active-border text-white"
                   }`
-                : `nav-item ${props.scroller ? "text-[#393E46]" : "text-white"}`
+                : `nav-item ${
+                    props.scroller
+                      ? "title-color"
+                      : props.isOpen
+                      ? "title-color text-center"
+                      : "text-white"
+                  }`
             }
           >
             Explore Wayang
@@ -36,9 +56,19 @@ const NavbarMenu = (props) => {
             className={({ isActive }) =>
               isActive
                 ? `nav-item-active ${
-                    props.scroller ? "text-[#393E46]" : "text-white"
+                    props.scroller
+                      ? "title-color nav-item-active-border"
+                      : props.isOpen
+                      ? "title-color font-medium text-center"
+                      : "nav-item-active-border text-white"
                   }`
-                : `nav-item ${props.scroller ? "text-[#393E46]" : "text-white"}`
+                : `nav-item ${
+                    props.scroller
+                      ? "title-color"
+                      : props.isOpen
+                      ? "title-color text-center"
+                      : "text-white"
+                  }`
             }
           >
             Mentorship
@@ -48,10 +78,18 @@ const NavbarMenu = (props) => {
             className={({ isActive }) =>
               isActive
                 ? `nav-item-active ${
-                    props.scroller ? "text-[#393E46]" : "text-white"
+                    props.scroller
+                      ? "title-color nav-item-active-border"
+                      : props.isOpen
+                      ? "title-color font-medium text-center"
+                      : "nav-item-active-border text-white"
                   }`
                 : `nav-item ${
-                    props.scroller ? "text-[#393E46] nav-item" : "text-white "
+                    props.scroller
+                      ? "title-color"
+                      : props.isOpen
+                      ? "title-color text-center"
+                      : "text-white"
                   }`
             }
           >

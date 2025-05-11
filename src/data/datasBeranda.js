@@ -40,17 +40,17 @@ export const faqs = [
   },
   {
     id: "6",
-    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    question:
+      "Saya belum tahu apa-apa soal wayang, harus mulai dari mana?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit mollitia provident quibusdam aliquid perspiciatis ipsum similique deserunt dolorem ex unde?",
+      "Kamu bisa mulai dari bagian 'Pengenalan Wayang' yang berisi sejarah singkat, tokoh-tokoh utama, dan jenis-jenis wayang.",
   },
 ];
 
 export const dataEvents = [
   {
     image: Event1,
-    title:
-      "Wayang Jogja Night Carnival 2024",
+    title: "Wayang Jogja Night Carnival 2024",
   },
   {
     image: Event2,

@@ -7,7 +7,7 @@
   --breakpoint-xs: 365px;
   --breakpoint-base: 600px;
   --breakpoint-md1: 768px;
-  --breakpoint-md: 910px;
+  --breakpoint-md: 960px;
   --breakpoint-lgs: 1160px;
   /* --breakpoint-lg2 : 500px; */
 }
@@ -20,8 +20,12 @@
   display: none; /* Chrome, Safari, Opera */
 }
 
+:root {
+  --color-secondary: var(#ffb200);
+  --color-title: var(--color-gray-700);
+}
 .title-color {
-  @apply text-gray-800;
+  color: var(--color-title);
 }
 .description-color {
   @apply text-gray-600;
@@ -29,9 +33,13 @@
 
 /* text-[#393E46] */
 .nav-item {
-  @apply font-montserrat text-[13px] font-medium;
+  @apply font-montserrat text-[13px] py-1 ;
 }
 
 .nav-item-active {
-  @apply font-montserrat text-[13px]  border-b-[#FFB200] border-b-2 px-1 pb-1;
+  @apply font-montserrat text-[13px] py-1 ;
+}
+
+.nav-item-active-border {
+  @apply font-medium px-2 border-b-2 border-[#FFB200]  bg-gradient-to-t from-[#FFB200]/20;
 }
