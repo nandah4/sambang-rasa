@@ -20,7 +20,9 @@ const NavbarMenu = (props) => {
                     props.scroller
                       ? "title-color"
                       : props.isOpen
-                      ? "title-color text-center"
+                      ? // ? "title-color text-center"
+                        // : props.path != "/"
+                        "title-color text-center"
                       : "text-white"
                   }`
             }
@@ -34,9 +36,9 @@ const NavbarMenu = (props) => {
               isActive
                 ? `nav-item-active ${
                     props.scroller
-                      ? "title-color  nav-item-active-border"
+                      ? "title-color nav-item-active-border"
                       : props.isOpen
-                      ? "title-color font-medium  text-center"
+                      ? "title-color font-medium text-center"
                       : "nav-item-active-border text-white"
                   }`
                 : `nav-item ${
@@ -60,12 +62,16 @@ const NavbarMenu = (props) => {
                       ? "title-color nav-item-active-border"
                       : props.isOpen
                       ? "title-color font-medium text-center"
-                      : "nav-item-active-border text-white"
+                      : props.path != "/"
+                      ? "nav-item-active-border title-color"
+                      : "text-white"
                   }`
                 : `nav-item ${
                     props.scroller
                       ? "title-color"
                       : props.isOpen
+                      ? "title-color text-center"
+                      : props.path != "/"
                       ? "title-color text-center"
                       : "text-white"
                   }`

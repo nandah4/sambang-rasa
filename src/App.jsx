@@ -5,6 +5,7 @@ import AppLayout from "./AppLayout";
 import Beranda from "./pages/Beranda";
 import Explore from "./pages/Explore";
 import Mentorship from "./pages/Mentorship";
+import DetailCategory from "./pages/DetailCategory";
 
 const App = () => {
   return (
@@ -13,7 +14,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<Beranda />} />
-            <Route path="explore" element={<Explore />} />
+            <Route path="explore" element={<Explore />}>
+              <Route path=":title" element={<DetailCategory />} />
+            </Route>
             <Route path="mentorship" element={<Mentorship />} />
           </Route>
         </Routes>

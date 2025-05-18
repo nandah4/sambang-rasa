@@ -4,14 +4,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { FaRegUser } from "react-icons/fa6";
 
-export default function Header() {
+export default function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScroller, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(() => scrollTop > 20);
+      setIsScrolled(() => scrollTop > 5);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,7 +22,11 @@ export default function Header() {
   return (
     <header
       className={`w-full h-[86px] fixed z-50 ${
-        isScroller ? "bg-white shadow-sm" : "bg-transparent"
+        isScroller
+          ? "bg-white shadow-sm"
+          : props.path == "/reward"
+          ? "bg-white"
+          : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-center h-full px-3 top-0 right-0 left-0">
@@ -47,7 +51,7 @@ export default function Header() {
 
           {/* Navbar Menu */}
           <div className="hidden md:block">
-            <NavbarMenu scroller={isScroller}></NavbarMenu>
+            <NavbarMenu scroller={isScroller} path={props.path}></NavbarMenu>
           </div>
 
           {/* Register Button */}

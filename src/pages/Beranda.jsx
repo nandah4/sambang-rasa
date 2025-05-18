@@ -162,7 +162,10 @@ const Beranda = () => {
               >
                 <div className="flex gap-x-5 w-max items-center justify-center h-full md1:pl-5">
                   {dataEvents.map((e) => (
-                    <div key={e.title} className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-lg">
+                    <div
+                      key={e.title}
+                      className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-lg"
+                    >
                       <img
                         src={e.image}
                         className="w-full h-full object-cover"
@@ -226,6 +229,7 @@ const Beranda = () => {
               <div className="col-span-4 h-[50vh] md1:h-auto  grid grid-cols-1 lgxs:grid-cols-2 gap-6 pr-0 lgxs:pr-6 pb-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
                 {testimonials.map((e) => (
                   <div
+                    key={e.id}
                     className={` ${
                       e.id == 1 ? "bg-[#4E1F00]/90" : ""
                     } h-[28vh] rounded-xl shadow-lg  flex flex-col p-5 justify-between`}
@@ -252,7 +256,7 @@ const Beranda = () => {
                   </div>
                 ))}
               </div>
-              <div className="col-span-2 flex flex-col justify-center items-start w-full p-5">
+              <div className="col-span-2 flex flex-col justify-center items-start w-full  md1:p-5">
                 <h2 className="font-montserrat text-3xl leading-9">
                   Cerita dari Teman-Teman Rasa
                 </h2>
@@ -301,8 +305,6 @@ const Beranda = () => {
             </div>
           </div>
         </section>
-
-        <section className="h-dvh w-full"></section>
       </main>
     </>
   );

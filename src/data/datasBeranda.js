@@ -86,10 +86,4 @@ export const testimonials = [
     testimonial:
       "Saya bukan dari Jawa, tapi penjelasan di Sambang Rasa sangat mudah dipahami.",
   },
-  {
-    id: 4,
-    name: "Sinta Lestari",
-    testimonial:
-      "Saya bukan dari Jawa, tapi penjelasan di Sambang Rasa sangat mudah dipahami.",
-  },
 ];

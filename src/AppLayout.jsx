@@ -1,10 +1,12 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import Header from "./components/Header";
 
 const AppLayout = () => {
+  const location = useLocation();
+  const currPath = location.pathname;
   return (
     <>
-      <Header />
+      <Header path={currPath} />
       <Outlet />
     </>
   );

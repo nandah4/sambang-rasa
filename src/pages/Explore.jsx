@@ -1,23 +1,80 @@
 import { useState } from "react";
-import image from "./../assets/hero1.WEBP";
+import { NavLink, Outlet, useParams } from "react-router";
+import { category } from "./../data/dataExplore.js";
+import backgrounImage from "./../assets/explores/bg-explore.jpeg";
+import { slug } from "../helper/slug.js";
 
 const Explore = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const { title } = useParams();
+  const [categorySelected, setCategorySelected] = useState(null);
 
-  const handleMouseMove = (e) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { width, height, left, top } = currentTarget.getBoundingClientRect();
+  if (title) {
+    return <Outlet />;
+  }
 
-    const x = ((clientX - left) / width - 0.5) * 20; // range -10 to 10
-    const y = ((clientY - top) / height - 0.5) * 20; // range -10 to 10
+  return (
+    <>
+      <main>
+        <section className="h-[60vh] border relative">
+          <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
+          <img src={backgrounImage} className="w-full h-full object-cover" />
+          <div className="flex px-3 xl:px-0 items-end max-w-7xl h-full mx-auto absolute bottom-10 left-0 right-0">
+            <p className="font-montserrat z-10 text-white text-3xl">
+              Explore Wayang
+            </p>
+          </div>
+        </section>
 
-    setPosition({ x, y });
-  };
-  return <>
-  <p>Ini Explore</p>
-  <main className="w-full h-dvh"></main>
-  <main className="w-full h-dvh"></main>
-  <main className="w-full h-dvh"></main>
-  </>
+        <section className="w-full md1:h-[40vh] my-10">
+          <div className="max-w-7xl mx-auto w-full h-full px-3 xl:px-0">
+            <div className="md1:grid md1:grid-cols-5 h-full">
+              <div className="md1:col-span-2 flex items-center justify-start md1:pr-3  border-amber-400">
+                <p className="font-montserrat mb-5 md1:mb-0 md1:mt-0 font-medium text-3xl leading-9">
+                  Kenalan Lebih Dekat Sama Dunia Wayang!
+                </p>
+              </div>
+              <div className="md1:col-span-3 flex items-center justify-start md1:pl-8">
+                <p className="font-montserrat text-sm leading-9">
+                  Di halaman Explore Wayang ini, kamu diajak buat seru-seruan
+                  sambil belajar tentang tokoh-tokoh wayang, cerita legendaris
+                  kayak Mahabharata & Ramayana. Lewat tampilan visual yang
+                  engaging dan cerita yang dikemas asik, kamu bisa ngerti kenapa
+                  wayang itu bukan cuma tontonan, tapi juga tuntunan. Yuk,
+                  selami satu per satu dan temuin sisi menarik dari budaya kita
+                  yang adiluhung ini!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="my-20 md1:my-0">
+          <div className="max-w-7xl mx-auto">
+            <div className="w-full h-full flex justify-start gap-x-6 lgbase:justify-between px-3 xl:px-0 gap-y-5 flex-wrap wrap-normal">
+              {category.map((e) => (
+                <NavLink
+                  state={e}
+                  to={`/explore/${slug(e.shortTitle)}`}
+                  key={e.id}
+                  className="hover:shadow-xl cursor-pointer md1:w-[350px] relative w-full h-96  shadow-xl rounded-md overflow-hidden"
+                >
+                  <img
+                    src={e.image}
+                    alt={e.shortTitle}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="group absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black/50 hover:from-black/70 duration-1000 transition-all to-transparent">
+                    <p className="absolute left-5 right-0 bottom-5 group-hover:bottom-6 text-white text-xl font-montserrat">
+                      {e.shortTitle}
+                    </p>
+                  </div>
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 };
 export default Explore;
