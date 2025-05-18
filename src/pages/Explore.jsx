@@ -34,14 +34,12 @@ const Explore = () => {
                 </p>
               </div>
               <div className="md1:col-span-3 flex items-center justify-start md1:pl-8">
-                <p className="font-montserrat text-sm leading-9">
-                  Di halaman Explore Wayang ini, kamu diajak buat seru-seruan
-                  sambil belajar tentang tokoh-tokoh wayang, cerita legendaris
-                  kayak Mahabharata & Ramayana. Lewat tampilan visual yang
-                  engaging dan cerita yang dikemas asik, kamu bisa ngerti kenapa
-                  wayang itu bukan cuma tontonan, tapi juga tuntunan. Yuk,
-                  selami satu per satu dan temuin sisi menarik dari budaya kita
-                  yang adiluhung ini!
+                <p className="font-montserrat text-sm leading-7">
+                  Di halaman Explore Wayang ini, kamu diajak belajar tentang
+                  tokoh-tokoh wayang, cerita legendaris kayak Mahabharata &
+                  Ramayana. Kamu bisa ngerti kenapa wayang itu bukan cuma
+                  tontonan, tapi juga tuntunan. Yuk, selami satu per satu dan
+                  temuin sisi menarik dari budaya kita yang adiluhung ini!
                 </p>
               </div>
             </div>
@@ -50,13 +48,13 @@ const Explore = () => {
 
         <section className="my-20 md1:my-0">
           <div className="max-w-7xl mx-auto">
-            <div className="w-full h-full flex justify-start gap-x-6 lgbase:justify-between px-3 xl:px-0 gap-y-5 flex-wrap wrap-normal">
+            <div className="w-full h-full grid md1:grid-cols-3 base:grid-cols-2 grid-cols-1 gap-x-6 px-3 xl:px-0 gap-y-6">
               {category.map((e) => (
                 <NavLink
                   state={e}
                   to={`/explore/${slug(e.shortTitle)}`}
                   key={e.id}
-                  className="hover:shadow-xl cursor-pointer md1:w-[350px] relative w-full h-96  shadow-xl rounded-md overflow-hidden"
+                  className="hover:shadow-xl cursor-pointer relative w-full h-70  shadow-xl rounded-md overflow-hidden"
                 >
                   <img
                     src={e.image}
@@ -64,7 +62,7 @@ const Explore = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="group absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black/50 hover:from-black/70 duration-1000 transition-all to-transparent">
-                    <p className="absolute left-5 right-0 bottom-5 group-hover:bottom-6 text-white text-xl font-montserrat">
+                    <p className="absolute left-5 right-0 bottom-5 group-hover:bottom-6 text-white text-lg font-montserrat">
                       {e.shortTitle}
                     </p>
                   </div>
