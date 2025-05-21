@@ -2,10 +2,14 @@ import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import heroImage from "./../assets/mentorship/hero-mentorship.jpg";
 import { Dropdown } from "../components/ui/Dropdown";
+import { seniPlaces } from "../data/dataMentorship";
 
 const Mentorship = () => {
   const [userDummy, setUserDummy] = useState();
   const [location, setLocation] = useState(null);
+
+  const placesFilter = seniPlaces.filter((e) => e.location == location);
+  const displayedPlace = location == null ? seniPlaces : placesFilter;
 
   console.log(location);
   return (
@@ -38,66 +42,70 @@ const Mentorship = () => {
           </div>
         </section>
 
-        <section className="max-w-7xl border mx-auto my-10 px-3 xl:px-0">
-          <div className="md1:grid md1:grid-cols-5">
-            <div className="col-span-3 border border-amber-300 pr-5">
+        <section
+          className={`${
+            displayedPlace.length === 0 ? "md1:h-[65vh]" : "h-auto"
+          }  max-w-7xl mx-auto my-10 px-3 xl:px-0 -z-20`}
+        >
+          <div className="grid grid-cols-1 md1:grid-cols-5">
+            <div className="md1:col-span-3 md1:pr-5">
               <div>
-                <h2 className="font-montserrat text-xl font-medium mb-5">
-                  100 Sanggar Seni
+                <h2 className="font-montserrat title-color text-xl font-medium mb-3">
+                  {displayedPlace.length} Sanggar Seni Wayang
                 </h2>
+                {displayedPlace.length === 0 ? (
+                  <p className="font-montserrat text-sm title-color">
+                    Mohon Maaf, Sanggar Seni terdekat belum ditemukan 😢
+                  </p>
+                ) : location == null ? (
+                  ""
+                ) : (
+                  <p className="mb-3 font-montserrat text-sm title-color">
+                    Kami Menemukan Sanggar di {location}, Selamat Belajar 😄!
+                  </p>
+                )}
               </div>
               <div className="grid md:grid-cols-2 gap-x-5 gap-y-5">
-                <div className="border rounded-lg shadow-md">
-                  <div className="h-50 w-full rounded-lg bg-amber-600"></div>
-                  <div className="p-2">
-                    <h3 className="font-montserrat">
-                      Lorem ipsum dolor sit amet.
-                    </h3>
-                    <p className="font-montserrat mt-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Alias, aspernatur?
-                    </p>
+                {displayedPlace.map((el) => (
+                  <div
+                    key={el.id}
+                    className="rounded-lg shadow overflow-hidden"
+                  >
+                    <div className="h-50 w-full rounded-lg bg-amber-600 relative">
+                      <img
+                        src={el.image}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute left-3 bottom-3 rounded px-2 py-2 bg-[#4E1F00] ">
+                        <p className="font-montserrat font-medium text-xs text-white">
+                          {el.location}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="p-5 mt-2">
+                      <h3 className="font-montserrat text-base font-medium title-color">
+                        🛖 {el.title}
+                      </h3>
+                      <div>
+                        <p className="font-montserrat mt-3 text-sm">
+                          Lokasi Sanggar
+                        </p>
+                        <p className="font-montserrat mt-1 text-[13px]">
+                          {el.detailLocation}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="border rounded-lg shadow-md">
-                  <div className="h-50 w-full rounded-lg bg-amber-600"></div>
-                  <div className="p-2">
-                    <h3 className="font-montserrat">
-                      Lorem ipsum dolor sit amet.
-                    </h3>
-                    <p className="font-montserrat mt-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Alias, aspernatur?
-                    </p>
-                  </div>
-                </div>
-                <div className="border rounded-lg shadow-md">
-                  <div className="h-50 w-full rounded-lg bg-amber-600"></div>
-                  <div className="p-2">
-                    <h3 className="font-montserrat">
-                      Lorem ipsum dolor sit amet.
-                    </h3>
-                    <p className="font-montserrat mt-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Alias, aspernatur?
-                    </p>
-                  </div>
-                </div>
-                <div className="border rounded-lg shadow-md">
-                  <div className="h-50 w-full rounded-lg bg-amber-600"></div>
-                  <div className="p-2">
-                    <h3 className="font-montserrat">
-                      Lorem ipsum dolor sit amet.
-                    </h3>
-                    <p className="font-montserrat mt-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Alias, aspernatur?
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-            <div className="col-span-2 border border-blue-300 p-5">
+            <div
+              className={`${
+                displayedPlace.length === 0
+                  ? "h-[45vh] md1:h-[65vh]"
+                  : "h-[45vh] md1:h-full"
+              } w-full md1:col-span-2 md1:mt-0 mt-6 md1:p-5 md1:pb-0`}
+            >
               <div className="w-full h-full">
                 <MapContainer
                   center={[-7.5555, 110.8]}
