@@ -62,16 +62,12 @@ const NavbarMenu = (props) => {
                       ? "title-color nav-item-active-border"
                       : props.isOpen
                       ? "title-color font-medium text-center"
-                      : props.path != "/"
-                      ? "nav-item-active-border title-color"
-                      : "text-white"
+                      : "text-white nav-item-active-border"
                   }`
                 : `nav-item ${
                     props.scroller
                       ? "title-color"
                       : props.isOpen
-                      ? "title-color text-center"
-                      : props.path != "/"
                       ? "title-color text-center"
                       : "text-white"
                   }`

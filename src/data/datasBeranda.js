@@ -1,5 +1,5 @@
-import Hero1 from "./../assets/hero-section.webp";
-import Hero2 from "./../assets/hero1.WEBP";
+import Hero1 from "./../assets/beranda/hero-section.webp";
+import Hero2 from "./../assets/beranda/hero1.WEBP";
 
 import Event1 from "./../assets/event/event-1.jpg";
 import Event2 from "./../assets/event/event-2.jpg";

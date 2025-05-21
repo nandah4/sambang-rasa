@@ -6,7 +6,7 @@ import {
   testimonials,
 } from "./../data/datasBeranda.js";
 
-import videoAsset from "./../assets/asset-video.mov";
+import videoAsset from "./../assets/beranda/asset-video.mov";
 import {
   FaEarthEurope,
   FaBookOpenReader,

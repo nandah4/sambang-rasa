@@ -15,7 +15,7 @@ const Explore = () => {
   return (
     <>
       <main>
-        <section className="h-[60vh] border relative">
+        <section className="h-[60vh] relative">
           <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
           <img src={backgrounImage} className="w-full h-full object-cover" />
           <div className="flex px-3 xl:px-0 items-end max-w-7xl h-full mx-auto absolute bottom-10 left-0 right-0">
@@ -29,7 +29,7 @@ const Explore = () => {
           <div className="max-w-7xl mx-auto w-full h-full px-3 xl:px-0">
             <div className="md1:grid md1:grid-cols-5 h-full">
               <div className="md1:col-span-2 flex items-center justify-start md1:pr-3  border-amber-400">
-                <p className="font-montserrat mb-5 md1:mb-0 md1:mt-0 font-medium text-3xl leading-9">
+                <p className="font-montserrat mb-5 md1:mb-0 md1:mt-0 font-medium text-2xl leading-9">
                   Kenalan Lebih Dekat Sama Dunia Wayang!
                 </p>
               </div>
