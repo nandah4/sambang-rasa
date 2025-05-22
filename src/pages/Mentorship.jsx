@@ -2,10 +2,11 @@ import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import heroImage from "./../assets/mentorship/hero-mentorship.jpg";
 import { Dropdown } from "../components/ui/Dropdown";
-import { seniPlaces } from "../data/dataMentorship";
+import { seniPlaces, dataMentorships } from "../data/dataMentorship";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 const Mentorship = () => {
-  const [userDummy, setUserDummy] = useState();
+  const [userDummy, setUserDummy] = useState([]);
   const [location, setLocation] = useState(null);
 
   const placesFilter = seniPlaces.filter((e) => e.location == location);
@@ -61,7 +62,7 @@ const Mentorship = () => {
                   ""
                 ) : (
                   <p className="mb-3 font-montserrat text-sm title-color">
-                    Kami Menemukan Sanggar di {location}, Selamat Belajar 😄!
+                    Kami menemukan tempatnya di {location}, Selamat Belajar 😄!
                   </p>
                 )}
               </div>
@@ -87,10 +88,10 @@ const Mentorship = () => {
                         🛖 {el.title}
                       </h3>
                       <div>
-                        <p className="font-montserrat mt-3 text-sm">
+                        <p className="font-montserrat title-color mt-3 text-sm">
                           Lokasi Sanggar
                         </p>
-                        <p className="font-montserrat mt-1 text-[13px]">
+                        <p className="font-montserra title-color mt-1 text-[13px]">
                           {el.detailLocation}
                         </p>
                       </div>
@@ -104,7 +105,7 @@ const Mentorship = () => {
                 displayedPlace.length === 0
                   ? "h-[45vh] md1:h-[65vh]"
                   : "h-[45vh] md1:h-full"
-              } w-full md1:col-span-2 md1:mt-0 mt-6 md1:p-5 md1:pb-0`}
+              } w-full md1:col-span-2 md1:mt-0 mt-6 md1:pt-5 md1:pl-7`}
             >
               <div className="w-full h-full">
                 <MapContainer
@@ -122,6 +123,49 @@ const Mentorship = () => {
                     <Popup>Sanggar Wayang.</Popup>
                   </Marker>
                 </MapContainer>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Discover Mentor */}
+        <section className="max-w-7xl mx-auto my-20 px-3 xl:px-0">
+          <div className="flex flex-col gap-y-5">
+            <div className="flex justify-between items-center">
+              <p className="font-montserrat text-2xl title-color">
+                Mentor-mentor Terbaik Anda
+              </p>
+              <div className="h-full flex gap-x-3">
+                <div className="p-3 border border-gray-300 rounded-full">
+                  <FaAngleLeft className="text-md " />
+                </div>
+                <div className="p-3 border border-gray-300 rounded-full">
+                  <FaAngleRight className="text-md " />
+                </div>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-x-10">
+              <div className="flex gap-x-5 w-max items-center justify-center">
+                {dataMentorships.map((e) => (
+                  <div className="h-[65vh] w-[60vh] shadow-xs border border-gray-300 rounded-lg overflow-hidden">
+                    <div className="h-[45vh] w-full">
+                      <img
+                        src={e.image}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-montserrat text-base title-color">
+                        Lorem ipsum dolor sit amet.
+                      </h3>
+                      <p className="mt-2 font-montserrat text-[13px] title-color">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Error, vel!
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
