@@ -75,7 +75,7 @@ const NavbarMenu = (props) => {
           >
             Mentorship
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/reward"
             className={({ isActive }) =>
               isActive
@@ -96,7 +96,7 @@ const NavbarMenu = (props) => {
             }
           >
             Reward
-          </NavLink>
+          </NavLink> */}
         </ul>
       </nav>
     </>

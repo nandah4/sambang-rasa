@@ -6,7 +6,7 @@ import { slug } from "../helper/slug.js";
 
 const Explore = () => {
   const { title } = useParams();
-  const [categorySelected, setCategorySelected] = useState(null);
+  // const [categorySelected, setCategorySelected] = useState(null)
 
   if (title) {
     return <Outlet />;
@@ -25,7 +25,7 @@ const Explore = () => {
           </div>
         </section>
 
-        <section className="w-full md1:h-[40vh] my-10">
+        <section className="w-full my-20">
           <div className="max-w-7xl mx-auto w-full h-full px-3 xl:px-0">
             <div className="md1:grid md1:grid-cols-5 h-full">
               <div className="md1:col-span-2 flex items-center justify-start md1:pr-3  border-amber-400">
@@ -46,7 +46,7 @@ const Explore = () => {
           </div>
         </section>
 
-        <section className="my-20 md1:my-0">
+        <section className="my-20 md1:my-10">
           <div className="max-w-7xl mx-auto">
             <div className="w-full h-full grid md1:grid-cols-3 base:grid-cols-2 grid-cols-1 gap-x-6 px-3 xl:px-0 gap-y-6">
               {category.map((e) => (

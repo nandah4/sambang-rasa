@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import heroImage from "./../assets/mentorship/hero-mentorship.jpg";
 import { Dropdown } from "../components/ui/Dropdown";
@@ -6,8 +6,17 @@ import { seniPlaces, dataMentorships } from "../data/dataMentorship";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 const Mentorship = () => {
-  const [userDummy, setUserDummy] = useState([]);
   const [location, setLocation] = useState(null);
+  const refScroll = useRef(null);
+
+  const scrollSide = (dir) => {
+    if (refScroll.current) {
+      refScroll.current.scrollBy({
+        left: dir == "left" ? -420 : 420,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const placesFilter = seniPlaces.filter((e) => e.location == location);
   const displayedPlace = location == null ? seniPlaces : placesFilter;
@@ -26,7 +35,7 @@ const Mentorship = () => {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto my-10 px-3 xl:px-0">
+        <section className="max-w-7xl mx-auto my-20 px-3 xl:px-0">
           <div className="grid base:grid-cols-2 md:grid-cols-3">
             <div className="col-span-1 md:col-span-2 ">
               <p className="text-2xl font-montserrat title-color">
@@ -132,36 +141,59 @@ const Mentorship = () => {
         <section className="max-w-7xl mx-auto my-20 px-3 xl:px-0">
           <div className="flex flex-col gap-y-5">
             <div className="flex justify-between items-center">
-              <p className="font-montserrat text-2xl title-color">
-                Mentor-mentor Terbaik Anda
-              </p>
+              <div>
+                <h2 className="font-montserrat text-2xl title-color">
+                  Mentor-mentor Terbaik Anda
+                </h2>
+                <p className="mt-2 text-sm title-color font-montserrat">
+                  Tidak hanya mentor wayang, tapi juga sinden, pengrawit, dan
+                  praktisi seni lainnya.
+                </p>
+              </div>
+
               <div className="h-full flex gap-x-3">
-                <div className="p-3 border border-gray-300 rounded-full">
+                <div
+                  onClick={() => scrollSide("left")}
+                  className="p-3 cursor-pointer border border-gray-300 rounded-full"
+                >
                   <FaAngleLeft className="text-md " />
                 </div>
-                <div className="p-3 border border-gray-300 rounded-full">
+                <div
+                  onClick={() => scrollSide("right")}
+                  className="p-3 cursor-pointer border border-gray-300 rounded-full"
+                >
                   <FaAngleRight className="text-md " />
                 </div>
               </div>
             </div>
 
-            <div className="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-x-10">
+            <div
+              ref={refScroll}
+              className="mt-3 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-x-10"
+            >
               <div className="flex gap-x-5 w-max items-center justify-center">
                 {dataMentorships.map((e) => (
-                  <div className="h-[65vh] w-[60vh] shadow-xs border border-gray-300 rounded-lg overflow-hidden">
-                    <div className="h-[45vh] w-full">
+                  <div
+                    key={e.id}
+                    className="h-[65vh] w-[60vh] shadow-xs border border-gray-300 rounded-lg overflow-hidden"
+                  >
+                    <div className="h-[45vh] w-full relative">
+                      <div className="absolute left-3 bottom-3 rounded-md px-3 py-2 bg-[#4E1F00] ">
+                        <p className="font-montserrat font-medium text-xs text-white">
+                          {e.sanggar}
+                        </p>
+                      </div>
                       <img
                         src={e.image}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="p-4">
-                      <h3 className="font-montserrat text-base title-color">
-                        Lorem ipsum dolor sit amet.
+                      <h3 className="font-montserrat font-medium text-base title-color">
+                        {e.nameMentor}
                       </h3>
                       <p className="mt-2 font-montserrat text-[13px] title-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Error, vel!
+                        {e.description}
                       </p>
                     </div>
                   </div>

@@ -29,17 +29,31 @@ export const dataMentorships = [
   {
     id: 1,
     image: mentor1,
+    sanggar: "Sanggar Wayang Gogon Surakarta",
+    nameMentor: "Bagus Pratama",
+    description: "Mentor muda berpengalaman dalam seni pedalangan wayang.",
   },
   {
     id: 2,
     image: mentor2,
+    sanggar: "Sanggar Wayang Gogon Surakarta",
+    nameMentor: "Rizky Wicaksono",
+    description: "Dalang muda dengan pendekatan modern dalam pewayangan.",
   },
   {
     id: 3,
     image: mentor3,
+    sanggar: "Sanggar Wayang Gogon Surakarta",
+    nameMentor: "Sutrisno",
+    description:
+      "Ahli gamelan dan musik pengiring wayang dengan pengalaman 30+ tahun.",
   },
   {
     id: 4,
     image: mentor4,
+    sanggar: "Sanggar Wayang Gogon Surakarta",
+    nameMentor: "Ratna Dewi",
+    description:
+      "Sinden muda berbakat dengan suara khas dan teknik vokal kuat.",
   },
 ];

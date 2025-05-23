@@ -35,8 +35,8 @@ const Beranda = () => {
     setFaqNums((nowId) => (nowId == id ? 0 : id));
   };
 
-  const leftFaqs = faqs.filter((e) => Number(e.id) <= 2);
-  const rightFaqs = faqs.filter((e) => Number(e.id) > 2);
+  // const leftFaqs = faqs.filter((e) => Number(e.id) <= 2);
+  // const rightFaqs = faqs.filter((e) => Number(e.id) > 2);
 
   const scroll = (dir) => {
     if (scrollRef.current) {
@@ -89,7 +89,7 @@ const Beranda = () => {
         </section>
 
         {/* Sekilas Section */}
-        <section className="max-w-7xl my-20  mx-auto px-3 xl:px-0">
+        <section className="max-w-7xl my-20 mx-auto px-3 xl:px-0">
           <h2 className="text-3xl font-montserrat text-center mb-9 md1:mb-14">
             Fakta Menarik Tentang Wayang
           </h2>
@@ -274,26 +274,17 @@ const Beranda = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="w-full mb-20 px-3 xl:px-0">
+        <section className="w-full mt-10 mb-20 px-3 xl:px-0">
           <div className="max-w-7xl xl:mx-auto ">
-            <h1 className="text-2xl font-montserrat title-color text-center mb-9 md1:mb-14">
-              Frequently Answer Questions (FAQ)
-            </h1>
-
             <div className="grid grid-cols-1 base:grid-cols-2 gap-x-10">
-              <div className="col-span-1 w-full ">
-                {leftFaqs.map((e) => (
-                  <FaqItem
-                    key={e.id}
-                    data={e}
-                    onClick={onFaqActive}
-                    isActive={faqNums}
-                  />
-                ))}
+              <div className="col-span-1 w-full flex justify-start">
+                <h1 className="text-2xl font-montserrat title-color text-center mb-9 md1:mb-14">
+                  Pertanyaan yang Sering Diajukan (FAQ)
+                </h1>
               </div>
 
               <div className="col-span-1 w-full">
-                {rightFaqs.map((e) => (
+                {faqs.map((e) => (
                   <FaqItem
                     key={e.id}
                     data={e}

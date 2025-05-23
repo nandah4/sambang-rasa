@@ -22,7 +22,7 @@ export const Dropdown = (props) => {
 
   return (
     <>
-      <div ref={headDropdownRef} className="z-10 w-full xs:w-64 cursor-pointer ">
+      <div ref={headDropdownRef} className="z-10 w-full  xs:w-64 cursor-pointer ">
         <div className=" bg-[#4E1F00] rounded-lg relative shadow-md">
           <div
             onClick={() => {
@@ -58,7 +58,7 @@ export const Dropdown = (props) => {
                     }}
                     className="px-4 py-4 hover:bg-gray-50 font-montserrat title-color text-sm"
                   >
-                    Solo
+                    Surakarta
                   </li>
                 </ul>
               </div>
