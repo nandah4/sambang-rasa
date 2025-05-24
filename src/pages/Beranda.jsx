@@ -256,7 +256,7 @@ const Beranda = () => {
                   </div>
                 ))}
               </div>
-              <div className="col-span-2 flex flex-col justify-center items-start w-full  md1:p-5">
+              <div className="col-span-2 flex flex-col justify-center items-start w-full  pt-5 md1:p-5">
                 <h2 className="font-montserrat text-3xl leading-9">
                   Cerita dari Teman-Teman Rasa
                 </h2>
