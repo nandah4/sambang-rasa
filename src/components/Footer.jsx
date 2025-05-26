@@ -20,9 +20,9 @@ const Footer = () => {
             </h2>
           </div>
         </div>
-        <div className="w-full border grid grid-cols-1 base:grid-cols-5 gap-x-20 md:gap-x-30 mt-7 base:mt-5">
+        <div className="w-full  grid grid-cols-1 base:grid-cols-5 gap-x-20 md:gap-x-30 mt-7 base:mt-5">
           {/* Description */}
-          <div className="base:col-span-2 border w-full">
+          <div className="base:col-span-2  w-full">
             <p className="font-montserrat text-[15px] text-white leading-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
               laboriosam soluta beatae assumenda repellendus magnam dolor, dicta

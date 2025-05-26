@@ -175,9 +175,9 @@ const Mentorship = () => {
                 {dataMentorships.map((e) => (
                   <div
                     key={e.id}
-                    className="h-[65vh] w-[60vh] shadow-xs border border-gray-300 rounded-lg overflow-hidden"
+                    className="h-96 w-90 shadow-xs border border-gray-300 rounded-lg overflow-hidden"
                   >
-                    <div className="h-[45vh] w-full relative">
+                    <div className="h-70 w-full relative">
                       <div className="absolute left-3 bottom-3 rounded-md px-3 py-2 bg-[#4E1F00] ">
                         <p className="font-montserrat font-medium text-xs text-white">
                           {e.sanggar}

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, React } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   imageData,
   faqs,
@@ -14,9 +14,12 @@ import {
   FaArrowRight,
   FaArrowLeft,
   FaArrowDown,
+  FaRegPenToSquare,
 } from "react-icons/fa6";
 import Card from "../components/ui/Card.jsx";
 import { FaqItem } from "../components/ui/FaqItem.jsx";
+import ImageContact from "./../assets/beranda/bg-contact.jpeg";
+import categoryImage3 from "./../assets/explores/explore3.jpg";
 
 const Beranda = () => {
   const [isImage, setIsImage] = useState(0);
@@ -41,7 +44,7 @@ const Beranda = () => {
   const scroll = (dir) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: dir == "left" ? -290 : 290,
+        left: dir == "left" ? -280 : 290,
         behavior: "smooth",
       });
     }
@@ -73,7 +76,7 @@ const Beranda = () => {
               <div
                 className="bg-white group  px-3 md1:px-5 cursor-pointer py-3 md1:py-4 rounded-md md1:rounded-xl mt-7 gap-x-4 flex items-center"
                 onClick={() =>
-                  window.scrollTo({ top: 480, behavior: "smooth" })
+                  window.scrollTo({ top: 440, behavior: "smooth" })
                 }
               >
                 <p className="font-montserrat title-color text-[12px] md1:text-[13px] font-medium">
@@ -278,7 +281,7 @@ const Beranda = () => {
           <div className="max-w-7xl xl:mx-auto ">
             <div className="grid grid-cols-1 base:grid-cols-2 gap-x-10">
               <div className="col-span-1 w-full flex justify-start">
-                <h1 className="text-2xl font-montserrat title-color text-center mb-9 md1:mb-14">
+                <h1 className="text-3xl text-start font-montserrat title-color text-center mb-9 md1:mb-14">
                   Pertanyaan yang Sering Diajukan (FAQ)
                 </h1>
               </div>
@@ -294,6 +297,78 @@ const Beranda = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Ulasan */}
+        <section className="my-20 px-3 xl:px-0">
+          <div className="max-w-7xl h-auto mdcontact:h-[450px] mx-auto w-full relative rounded-xl overflow-hidden">
+            <img
+              src={categoryImage3}
+              className="w-full h-full object-cover absolute z-0 inset-0"
+            />
+            <div className="absolute bg-[#4E1F00] opacity-50 inset-0 z-0"></div>
+            <div className="grid mdcontact:grid-cols-2 w-full p-14 relative mdcontact:absolute z-10 mdcontact:inset-0">
+              <div className=" border-white flex items-center pr-5 mb-8 mdcontact:mb-0">
+                <h2 className="text-3xl font-montserrat text-white leading-10">
+                  Bagikan Cerita Anda Selama Belajar Kesenian Wayang dan
+                  Biarkan Orang Lain Mendapatkan Gambaran dari Pengalaman Nyata
+                </h2>
+              </div>
+              <div className="mdcontact:pl-20">
+                <div>
+                  <label
+                    htmlFor="username"
+                    className="font-montserrat  text-base text-white"
+                  >
+                    Nama Anda
+                  </label>
+                  <input
+                    className="mt-2 shadow rounded-md w-full bg-white py-4 px-3 border-gray-300 focus:shadow-amber-800 text-sm focus:outline-none title-color font-montserrat leading-tight"
+                    placeholder="Angga Wijaya"
+                  />
+                </div>
+                <div className="mt-5">
+                  <label
+                    htmlFor="cerita"
+                    className="font-montserrat  text-base text-white"
+                  >
+                    Cerita Anda
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="4"
+                    className="mt-2 p-3 w-full text-sm title-color font-montserrat bg-gray-50 rounded-lg border border-gray-300 focus:outline-0"
+                    placeholder="Tulis cerita Anda di sini ..."
+                  ></textarea>
+                </div>
+                <button className="bg-white rounded-md cursor-pointer px-5 py-3 mt-5 flex gap-x-4 items-center">
+                  <FaRegPenToSquare className="title-color text-base" />
+                  <p className="text-sm font-montserrat title-color">
+                    Mulai Bagikan
+                  </p>
+                </button>
+              </div>
+            </div>
+            {/* <div className="w-full mdcontact:w-5/6 overflow-hidden rounded-2xl h-[600px] relative">
+              <img src={ImageContact} className="w-full h-full" />
+              <div className="absolute bg-[#4E1F00] opacity-70 left-0 right-0 top-0 bottom-0"></div>
+              <h2 className="absolute top-30 left-10 font-montserrat text-3xl text-white">Sampaikan kesan Anda</h2>
+            <div className="w-full base:w-3/4 md:w-2/4 bg-white shadow-md absolute rounded-2xl my-10 right-0 top-0 bottom-0 base:hidden"></div>
+            </div>
+            <div className="w-2/5 bg-white p-10 shadow-md absolute rounded-2xl my-10 right-0 top-0 bottom-0 hidden mdcontact:block">
+            <div className=" w-full h-full ">
+
+                <div>
+                <label htmlFor="username" className="font-montserrat text-lg title-color">Nama Anda</label>
+                <input className="mt-2 shadow border rounded w-full py-3 px-3 border-gray-300 focus:shadow-amber-800 text-sm focus:outline-amber-900 title-color font-montserrat leading-tight" placeholder="Angga Wijaya"/>
+                </div>
+                <div className="mt-5">
+                <label htmlFor="username" className="font-montserrat text-lg title-color">Nama Anda</label>
+                <input className="mt-2 shadow border rounded w-full py-3 px-3 border-gray-300 focus:shadow-amber-800 text-sm focus:outline-amber-900 title-color font-montserrat leading-tight" placeholder="Angga Wijaya"/>
+                </div>
+            </div>
+            </div> */}
           </div>
         </section>
       </main>

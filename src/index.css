@@ -10,6 +10,8 @@
   --breakpoint-base: 600px;
   --breakpoint-md1: 768px;
   --breakpoint-md: 960px;
+  --breakpoint-mdcontact: 840px;
+  --breakpoint-mdcontactxs: 525px;
   --breakpoint-lgxs: 1060px;
   --breakpoint-lgbase: 1124px;
   --breakpoint-lgs: 1160px;

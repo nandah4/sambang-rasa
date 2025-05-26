@@ -46,7 +46,7 @@ const Explore = () => {
           </div>
         </section>
 
-        <section className="my-20 md1:my-10">
+        <section className="my-20 md1:my-20">
           <div className="max-w-7xl mx-auto">
             <div className="w-full h-full grid md1:grid-cols-3 base:grid-cols-2 grid-cols-1 gap-x-6 px-3 xl:px-0 gap-y-6">
               {category.map((e) => (
