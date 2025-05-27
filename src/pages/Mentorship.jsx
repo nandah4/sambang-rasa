@@ -112,8 +112,8 @@ const Mentorship = () => {
             <div
               className={`${
                 displayedPlace.length === 0
-                  ? "h-[45vh] md1:h-[65vh]"
-                  : "h-[45vh] md1:h-full"
+                  ? "h-[350px] md1:h-[500px]"
+                  : "h-[350px] md1:h-full"
               } w-full md1:col-span-2 md1:mt-0 mt-6 md1:pt-5 md1:pl-7`}
             >
               <div className="w-full h-full">
@@ -140,7 +140,7 @@ const Mentorship = () => {
         {/* Discover Mentor */}
         <section className="max-w-7xl mx-auto my-20 px-3 xl:px-0">
           <div className="flex flex-col gap-y-5">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap">
               <div>
                 <h2 className="font-montserrat text-2xl title-color">
                   Mentor-mentor Terbaik Anda
@@ -151,7 +151,7 @@ const Mentorship = () => {
                 </p>
               </div>
 
-              <div className="h-full flex gap-x-3">
+              <div className="h-full flex gap-x-3 mt-5 md1:mt-0">
                 <div
                   onClick={() => scrollSide("left")}
                   className="p-3 cursor-pointer border border-gray-300 rounded-full"
