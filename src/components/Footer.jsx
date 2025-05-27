@@ -24,9 +24,9 @@ const Footer = () => {
           {/* Description */}
           <div className="base:col-span-2  w-full">
             <p className="font-montserrat text-[15px] text-white leading-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-              laboriosam soluta beatae assumenda repellendus magnam dolor, dicta
-              ipsa laudantium aliquid.
+              Sambang Rasa adalah platform yang menghubungkan masyarakat dengan
+              sanggar seni lokal melalui program mentorship, informasi lokasi
+              belajar, dan cerita dari pelajar lain.
             </p>
           </div>
           {/* Sosial Media */}

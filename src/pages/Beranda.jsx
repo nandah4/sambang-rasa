@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import {
   imageData,
   faqs,
@@ -18,13 +18,25 @@ import {
 } from "react-icons/fa6";
 import Card from "../components/ui/Card.jsx";
 import { FaqItem } from "../components/ui/FaqItem.jsx";
-import ImageContact from "./../assets/beranda/bg-contact.jpeg";
 import categoryImage3 from "./../assets/explores/explore3.jpg";
+import { DataProvider } from "../App.jsx";
 
 const Beranda = () => {
   const [isImage, setIsImage] = useState(0);
   const [faqNums, setFaqNums] = useState(1);
   const scrollRef = useRef(null);
+
+  // Navigate to ulasan
+  const { getUlasan, setUlasan } = useContext(DataProvider);
+  useEffect(() => {
+    if (getUlasan) {
+      const el = document.getElementById("ulasan");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      setUlasan(null);
+    }
+  }, [getUlasan, setUlasan]);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -37,8 +49,6 @@ const Beranda = () => {
   const onFaqActive = (id) => {
     setFaqNums((nowId) => (nowId == id ? 0 : id));
   };
-
-  
 
   // const leftFaqs = faqs.filter((e) => Number(e.id) <= 2);
   // const rightFaqs = faqs.filter((e) => Number(e.id) > 2);
@@ -56,7 +66,7 @@ const Beranda = () => {
     <>
       <main className="w-full">
         {/* Hero Section */}
-        <section className="h-[500px] bg-amber-50 relative overflow-hidden">
+        <section className="h-[540px] bg-amber-50 relative overflow-hidden">
           <img
             src={imageData[isImage]}
             className="w-full h-full object-cover"
@@ -310,9 +320,9 @@ const Beranda = () => {
               className="w-full h-full object-cover absolute z-0 inset-0"
             />
             <div className="absolute bg-[#4E1F00] opacity-50 inset-0 z-0"></div>
-            <div className="grid mdcontact:grid-cols-2 w-full p-14 relative mdcontact:absolute z-10 mdcontact:inset-0">
-              <div className=" border-white flex items-center pr-5 mb-8 mdcontact:mb-0">
-                <h2 className="text-3xl font-montserrat text-white leading-10">
+            <div className="grid mdcontact:grid-cols-2 w-full p-7 base:p-14 relative mdcontact:absolute z-10 mdcontact:inset-0">
+              <div className="flex items-center pr-5 mb-8 mdcontact:mb-0">
+                <h2 className="text-2xl base:text-3xl font-montserrat text-white leading-10">
                   Bagikan Cerita Anda Selama Belajar Kesenian Wayang dan Biarkan
                   Orang Lain Mendapatkan Gambaran dari Pengalaman Nyata
                 </h2>

@@ -8,24 +8,24 @@ import Event3 from "./../assets/event/event-3.jpg";
 export const imageData = [Hero1, Hero2];
 
 export const faqs = [
-  {
-    id: "1",
-    question: "Apa itu Sambang Rasa?",
-    answer:
-      "Website ini merupakan platform edukatif yang mengajak pengunjung untuk mengenal, mempelajari, dan melestarikan budaya wayang—mulai dari sejarah, tokoh-tokohnya, hingga seni menjadi dalang.",
-  },
+  // {
+  //   id: "1",
+  //   question: "Apa itu Sambang Rasa?",
+  //   answer:
+  //     "Website ini merupakan platform edukatif yang mengajak pengunjung untuk mengenal, mempelajari, dan melestarikan budaya wayang—mulai dari sejarah, tokoh-tokohnya, hingga seni menjadi dalang.",
+  // },
   // {
   //   id: "2",
   //   question: "Apakah belajar di Sambang Rasa gratis?",
   //   answer:
   //     "Sebagian besar konten di website ini, seperti artikel sejarah dan cerita-cerita wayang, dapat diakses secara gratis. Untuk bagian pembelajaran mendalang, kami menyediakan dua pilihan: akses gratis untuk materi dasar, dan akses berbayar untuk kelas lanjutan yang lebih mendalam dan dipandu oleh dalang profesional.",
   // },
-  // {
-  //   id: "2",
-  //   question: "Apakah saya bisa belajar menjadi dalang",
-  //   answer:
-  //     "Tentu! Di website ini, kamu tidak hanya belajar dasar-dasar mengenai sejarah dan cerita, tapi juga bisa mencari sanggar seni terdekat untuk belajar langsung dari para dalang. Kami menyediakan fitur pencarian lokasi sanggar, agar kamu bisa mulai belajar sesuai minat dan kebutuhan—baik secara gratis maupun melalui program pelatihan berbayar.",
-  // },
+  {
+    id: "1",
+    question: "Apakah saya bisa belajar menjadi dalang",
+    answer:
+      "Tentu! Di website ini, kamu tidak hanya belajar dasar-dasar mengenai sejarah dan cerita, tapi juga bisa mencari sanggar seni terdekat untuk belajar langsung dari para dalang. Kami menyediakan fitur pencarian lokasi sanggar, agar kamu bisa mulai belajar sesuai minat dan kebutuhan.",
+  },
   // {
   //   id: "2",
   //   question: "Apakah website ini hanya membahas wayang Jawa?",

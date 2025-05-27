@@ -131,7 +131,6 @@ const DetailCategory = () => {
           <>
             <section className="max-w-5xl mx-auto my-10 px-3 xl:px-0">
               <div>
-                
                 <h2 className="text-lg font-montserrat font-medium title-color mb-5">
                   🎬 3 Unsur Utama Pertunjukkan Wayang Kulit
                 </h2>
@@ -161,8 +160,8 @@ const DetailCategory = () => {
                   🎬 Unsur Lain dalam Pertunjukkan Wayang Kulit
                 </h2>
                 <p className="font-montserrat text-sm title-color mb-5">
-                  Terdapat unsur peralatan pagelaran Wayang Kulit yang terdiri dari
-                  peralatan Dalang dan Niyaga/Wiyaga (pemain Gamelan)
+                  Terdapat unsur peralatan pagelaran Wayang Kulit yang terdiri
+                  dari peralatan Dalang dan Niyaga/Wiyaga (pemain Gamelan)
                 </p>
                 <div className="grid md1:grid-cols-3 base:grid-cols-2 grid-cols-1 gap-x-10 gap-y-10">
                   {data.dataUnsurUtama

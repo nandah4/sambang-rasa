@@ -1,10 +1,13 @@
 import NavbarMenu from "../components/ui/NavbarMenu";
 import Logo from "../assets/logo/logo-final-banget.png";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { FaRegPenToSquare } from "react-icons/fa6";
+import { NavLink, Link } from "react-router";
+import { DataProvider } from "../App";
 
 export default function Header(props) {
+  const { setUlasan } = useContext(DataProvider);
   const [isOpen, setIsOpen] = useState(false);
   const [isScroller, setIsScrolled] = useState(false);
 
@@ -55,31 +58,31 @@ export default function Header(props) {
           </div>
 
           {/* Ulasan Button */}
-          <section className="hidden md:block">
-            
-            <div className="group cursor-pointer border-slate-300 transition-all duration-300 rounded-md flex justify-center items-center gap-x-3">
-              <a
-              href="/#ulasan"
-                className={`font-montserrat group-hover:font-medium text-[13px] ${
-                  isScroller ? "title-color" : "text-white"
-                }`}
-              >
-                Bagikan Cerita
-              </a>
-              <div
-                className={`${
-                  isScroller ? "bg-[#FFB200]" : "bg-white"
-                } rounded-md p-2 group-hover:bg-[#FFB200] `}
-              >
-                <FaRegPenToSquare
-                  size={17}
+          <NavLink to={"/"} onClick={() => setUlasan("ulasan")}>
+            <section className="hidden md:block">
+              <div className="group cursor-pointer border-slate-300 transition-all duration-300 rounded-md flex justify-center items-center gap-x-3">
+                <p
+                  className={`font-montserrat group-hover:font-medium text-[13px] ${
+                    isScroller ? "title-color" : "text-white"
+                  }`}
+                >
+                  Bagikan Cerita
+                </p>
+                <div
                   className={`${
-                    isScroller ? "text-white" : "title-color"
-                  } text-base group-hover:text-white`}
-                />
+                    isScroller ? "bg-[#FFB200]" : "bg-white"
+                  } rounded-md p-2 group-hover:bg-[#FFB200] `}
+                >
+                  <FaRegPenToSquare
+                    size={17}
+                    className={`${
+                      isScroller ? "text-white" : "title-color"
+                    } text-base group-hover:text-white`}
+                  />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </NavLink>
 
           <div
             className="md:hidden cursor-pointer"
@@ -105,11 +108,14 @@ export default function Header(props) {
           >
             <div className="flex flex-col-reverse gap-y-3 w-full px-5 py-5 bg-white rounded-lg shadow-lg">
               <NavbarMenu isOpen={isOpen} />
-              <section className="border-b border-b-gray-300 pb-3">
-                <p className="font-montserrat text-center text-sm">
-                  Bagikan Cerita
-                </p>
-              </section>
+              <NavLink to={"/"} onClick={() => setUlasan("ulasan")}>
+                {" "}
+                <section className="border-b border-b-gray-300 pb-3">
+                  <p className="font-montserrat text-center text-sm">
+                    Bagikan Cerita
+                  </p>
+                </section>
+              </NavLink>
             </div>
           </div>
         </div>
