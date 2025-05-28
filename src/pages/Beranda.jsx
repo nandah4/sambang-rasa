@@ -20,6 +20,7 @@ import Card from "../components/ui/Card.jsx";
 import { FaqItem } from "../components/ui/FaqItem.jsx";
 import categoryImage3 from "./../assets/explores/explore3.jpg";
 import { DataProvider } from "../App.jsx";
+import { Link } from "react-router";
 
 const Beranda = () => {
   const [isImage, setIsImage] = useState(0);
@@ -30,11 +31,13 @@ const Beranda = () => {
   const { getUlasan, setUlasan } = useContext(DataProvider);
   useEffect(() => {
     if (getUlasan) {
-      const el = document.getElementById("ulasan");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-      setUlasan(null);
+      setTimeout(() => {
+        const el = document.getElementById("ulasan");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+        setUlasan(null);
+      }, 50);
     }
   }, [getUlasan, setUlasan]);
 
@@ -49,9 +52,6 @@ const Beranda = () => {
   const onFaqActive = (id) => {
     setFaqNums((nowId) => (nowId == id ? 0 : id));
   };
-
-  // const leftFaqs = faqs.filter((e) => Number(e.id) <= 2);
-  // const rightFaqs = faqs.filter((e) => Number(e.id) > 2);
 
   const scroll = (dir) => {
     if (scrollRef.current) {
@@ -204,7 +204,7 @@ const Beranda = () => {
         <section className="w-full px-3 xl:px-0 mb-25">
           <div className="mx-auto md1:max-w-7xl h-[57vh] rounded-xl md1:rounded-3xl bg-[#74512D] overflow-hidden">
             <div className="relative w-full h-full">
-              <div className="absolute w-full h-full bg-[#4E1F00]/90">
+              <div className="absolute z-10 w-full h-full bg-[#4E1F00]/80">
                 <div className="base:grid-cols-5 base:grid h-full">
                   <div className="col-span-2 ">
                     {/* <p className="text-white font-montserrat text-[12px] font-me">
@@ -219,9 +219,11 @@ const Beranda = () => {
                       menciptakan warisan budaya yang hidup hingga kini."
                     </p>
                     <div className="mt-6 md1:mt-10">
-                      <p className="text-white cursor-pointer underline font-medium font-montserrat text-sm">
-                        Explore Yuk!
-                      </p>
+                      <Link to={"/explore"}>
+                        <p className="text-white cursor-pointer underline font-medium font-montserrat text-sm">
+                          Explore Yuk!
+                        </p>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -232,6 +234,8 @@ const Beranda = () => {
                 autoPlay
                 loop
                 muted
+                disableRemotePlayback
+                playsInline
               ></video>
             </div>
           </div>
