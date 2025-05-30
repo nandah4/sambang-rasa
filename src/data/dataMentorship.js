@@ -36,6 +36,12 @@ export const dataMentorships = [
     expertise: "Pedalangan",
     experienceYears: 4,
     description: "Mentor muda berpengalaman dalam seni pedalangan wayang.",
+    journey: [
+      "Aktif mengikuti pelatihan dalang remaja di sanggar lokal sejak usia 15.",
+      "Menjadi asisten dalang dalam beberapa pertunjukan besar di Solo.",
+      "Mulai tampil sebagai dalang utama di acara sekolah dan komunitas pada usia 17.",
+      "Menjadi mentor muda di Sanggar Wayang Gogon sejak usia 18.",
+    ],
   },
   {
     id: 2,
@@ -47,6 +53,12 @@ export const dataMentorships = [
     expertise: "Pedalangan modern",
     experienceYears: 3,
     description: "Dalang muda dengan pendekatan modern dalam pewayangan.",
+    journey: [
+      "Belajar pedalangan otodidak sambil mengeksplorasi teknik modern dan kontemporer.",
+      "Membuat kanal YouTube yang memperkenalkan pewayangan dalam format digital.",
+      "Mengikuti festival budaya digital dan tampil sebagai dalang muda inovatif.",
+      "Bergabung sebagai mentor kreatif di Sanggar Wayang Gogon sejak usia 18.",
+    ],
   },
   {
     id: 3,
@@ -59,6 +71,12 @@ export const dataMentorships = [
     experienceYears: 32,
     description:
       "Ahli gamelan dan musik pengiring wayang dengan pengalaman 30+ tahun.",
+    journey: [
+      "Menjadi pemain gamelan tetap di sanggar tradisional sejak usia 17.",
+      "Menjadi pengiring utama dalam pertunjukan wayang di berbagai kota Jawa Tengah.",
+      "Mengajar musik tradisional dan gamelan di berbagai sanggar dan sekolah budaya.",
+      "Menjadi mentor senior di Sanggar Wayang Gogon sejak lebih dari 15 tahun lalu.",
+    ],
   },
   {
     id: 4,
@@ -71,5 +89,11 @@ export const dataMentorships = [
     experienceYears: 7,
     description:
       "Sinden muda berbakat dengan suara khas dan teknik vokal kuat.",
+    journey: [
+      "Tampil pertama kali sebagai sinden dalam acara desa pada usia 14.",
+      "Memenangkan lomba sinden remaja tingkat kabupaten di usia 16.",
+      "Diundang tampil di TV lokal dan berbagai acara budaya.",
+      "Menjadi pengajar vokal tradisional dan mentor sinden muda sejak usia 21.",
+    ],
   },
 ];

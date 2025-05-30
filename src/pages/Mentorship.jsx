@@ -246,26 +246,28 @@ const Mentorship = () => {
               id="mentordetail"
               className="max-w-7xl overflow-hidden mx-auto px-3 xl:px-0 mb-30"
             >
-              <h2 className="text-2xl font-montserrat title-color mb-5">
-                Mengenal Lebih Dekat {detailMentor.nameMentor}
-              </h2>
-              <div className="grid md1:grid-cols-2 mx-auto md1:h-[450px]">
-                <div className="col-span-1 h-[300px] md1:h-full w-full">
-                  <img
-                    src={detailMentor.image}
-                    className="w-full h-full object-center base:object-cover"
-                  />
+              <div className="grid md1:grid-cols-2 mx-auto">
+                <div className="col-span-1 flex justify-center items-center h-full w-full">
+                  <div className="h-[480px] w-full lgbase:w-[530px] shadow rounded-xl overflow-hidden">
+                    <img
+                      src={detailMentor.image}
+                      className="w-full h-full object-center base:object-cover"
+                    />
+                  </div>
                 </div>
-                <div className="col-span-1 h-full w-full flex flex-col justify-star mt-5 md1:mt-0 md1:pl-10">
+                <div className="col-span-1 md1:pl-5 h-full w-full flex flex-col justify-star mt-5 md1:mt-0">
+                  <h2 className="text-2xl font-montserrat title-color mb-5">
+                    Mengenal Lebih Dekat {detailMentor.nameMentor}
+                  </h2>
                   <h1 className="font-montserrat text-xl title-color font-medium">
-                    👤 {detailMentor.nameMentor}
+                    👷🏻 {detailMentor.nameMentor}
                   </h1>
                   <p className="font-montserrat text-sm title-color my-5">
                     {detailMentor.description}
                   </p>
 
                   <p className="font-montserrat text-lg title-color">
-                    👇🏻 Detail Mentor
+                    👣 Biodata dan Perjalanan Karir
                   </p>
                   <div className="p-7 bg-slate-50 rounded-lg mt-2">
                     <ul className="flex flex-col gap-y-3">
@@ -273,8 +275,7 @@ const Mentorship = () => {
                         Umur<span className="pl-28">: {detailMentor.age}</span>
                       </li>
                       <li className="font-montserrat text-sm title-color">
-                        Jenis Kelamin
-                        <span className="pl-14">: {detailMentor.gender}</span>
+                        Sanggar<span className="pl-[94px]">: {detailMentor.sanggar}</span>
                       </li>
                       <li className="font-montserrat text-sm title-color">
                         Bidang
@@ -287,6 +288,12 @@ const Mentorship = () => {
                         <span className="pl-[63px]">
                           : {detailMentor.experienceYears} Tahun
                         </span>
+                      </li>
+                      <li className="font-montserrat text-sm title-color">
+                        Karir
+                        {detailMentor.journey.map((e) => (
+                          <li className="text-sm font-montserrat title-color pl-1 mb-1">‼️ {e}</li>
+                        ))}
                       </li>
                     </ul>
                   </div>
