@@ -4,6 +4,8 @@ import heroImage from "./../assets/mentorship/hero-mentorship.jpg";
 import { Dropdown } from "../components/ui/Dropdown";
 import { seniPlaces, dataMentorships } from "../data/dataMentorship";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import image1 from "./../assets/mentorship/sanggar_gogon.jpg";
+import "leaflet/dist/leaflet.css";
 
 const Mentorship = () => {
   const [location, setLocation] = useState(null);
@@ -25,7 +27,7 @@ const Mentorship = () => {
   return (
     <>
       <main>
-        <section className="h-[540px] relative">
+        <section className="h-[400px] relative">
           <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
           <img src={heroImage} className="w-full h-full object-cover" />
           <div className="flex max-w-7xl items-end mx-auto px-3 xl:px-0 absolute bottom-10 left-0 right-0">
@@ -60,7 +62,7 @@ const Mentorship = () => {
           <div className="grid grid-cols-1 md1:grid-cols-5">
             <div className="md1:col-span-3 md1:pr-5">
               <div>
-                <h2 className="font-montserrat title-color text-xl font-medium mb-3">
+                <h2 className="font-montserrat title-color text-2xl mb-3">
                   {displayedPlace.length} Sanggar Seni Wayang
                 </h2>
                 {displayedPlace.length === 0 ? (
@@ -116,20 +118,34 @@ const Mentorship = () => {
                   : "h-[350px] md1:h-full"
               } w-full md1:col-span-2 md1:mt-0 mt-6 md1:pt-5 md1:pl-7`}
             >
-              <div className="w-full h-full">
+              <h2 className=" md1:hidden text-2xl font-montserrat title-color mb-5">
+                Map Yang Mempermudah Anda
+              </h2>
+              <div className="w-full h-full -z-10">
                 <MapContainer
-                  center={[-7.5555, 110.8]}
+                  center={[-7.5585649, 110.8509434]}
                   zoom={13}
                   style={{
                     width: "100%",
                     height: "100%",
-                    zIndex: -100,
                     position: "relative",
                   }}
                 >
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                  <Marker position={[-7.5555, 110.8]}>
-                    <Popup>Sanggar Wayang.</Popup>
+                  <Marker position={[-7.5585649, 110.8509434]}>
+                    <Popup>
+                      <div>
+                        <div className="h-20 w-full bg-amber-50 mb-2">
+                          <img
+                            src={image1}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <h1 className="title-color font-montserrat text-sm">
+                          Sanggar Wayang Gogon Surakarta
+                        </h1>
+                      </div>
+                    </Popup>
                   </Marker>
                 </MapContainer>
               </div>
@@ -154,15 +170,15 @@ const Mentorship = () => {
               <div className="h-full flex gap-x-3 mt-5 md1:mt-0">
                 <div
                   onClick={() => scrollSide("left")}
-                  className="p-3 cursor-pointer border border-gray-300 rounded-full"
+                  className="p-3 cursor-pointer group hover:bg-[#4E1F00]/70 border border-gray-300 rounded-full"
                 >
-                  <FaAngleLeft className="text-md " />
+                  <FaAngleLeft className="text-md group-hover:text-white" />
                 </div>
                 <div
                   onClick={() => scrollSide("right")}
-                  className="p-3 cursor-pointer border border-gray-300 rounded-full"
+                  className="p-3 cursor-pointer border group hover:bg-[#4E1F00]/70 border-gray-300 rounded-full"
                 >
-                  <FaAngleRight className="text-md " />
+                  <FaAngleRight className="text-md group-hover:text-white " />
                 </div>
               </div>
             </div>
@@ -175,7 +191,7 @@ const Mentorship = () => {
                 {dataMentorships.map((e) => (
                   <div
                     key={e.id}
-                    className="h-96 w-90 shadow-xs border border-gray-300 rounded-lg overflow-hidden"
+                    className="h-auto w-80 shadow-xs border border-gray-300 rounded-lg overflow-hidden"
                   >
                     <div className="h-70 w-full relative">
                       <div className="absolute left-3 bottom-3 rounded-md px-3 py-2 bg-[#4E1F00] ">
@@ -185,7 +201,7 @@ const Mentorship = () => {
                       </div>
                       <img
                         src={e.image}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-center"
                       />
                     </div>
                     <div className="p-4">

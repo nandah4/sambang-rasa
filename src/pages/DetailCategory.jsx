@@ -24,7 +24,7 @@ const DetailCategory = () => {
   return (
     <>
       <main>
-        <section className="h-[540px] w-full relative">
+        <section className="h-[400px] w-full relative">
           <div className="bg-[#4E1F00] absolute opacity-60 top-0 left-0 right-0 h-full"></div>
           <img src={data.image} className="w-full h-full object-cover" />
         </section>

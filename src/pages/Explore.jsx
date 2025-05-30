@@ -15,7 +15,7 @@ const Explore = () => {
   return (
     <>
       <main>
-        <section className="h-[540px] relative">
+        <section className="h-[400px] relative">
           <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
           <img src={backgrounImage} className="w-full h-full object-cover" />
           <div className="flex px-3 xl:px-0 items-end max-w-7xl h-full mx-auto absolute bottom-10 left-0 right-0">

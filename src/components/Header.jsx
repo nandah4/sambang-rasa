@@ -24,7 +24,7 @@ export default function Header(props) {
 
   return (
     <header
-      className={`w-full h-[86px] fixed z-50 ${
+      className={`w-full h-[86px] fixed z-[2000] ${
         isScroller
           ? "bg-white shadow-sm"
           : props.path == "/reward"

@@ -89,16 +89,16 @@ const Beranda = () => {
                 berabad-abad.
               </p>
               <div
-                className="bg-white group  px-3 md1:px-5 cursor-pointer py-3 md1:py-4 rounded-md md1:rounded-xl mt-7 gap-x-4 flex items-center"
+                className="bg-white group  px-3 md1:px-4 cursor-pointer py-2 md1:py-3 rounded-md md1:rounded-lg mt-7 gap-x-4 flex items-center"
                 onClick={() =>
                   window.scrollTo({ top: 440, behavior: "smooth" })
                 }
               >
-                <p className="font-montserrat title-color text-[12px] md1:text-[13px] font-medium">
+                <p className="font-montserrat title-color text-[12px] md1:text-sm font-medium">
                   Jelajahi Selengkapnya
                 </p>
                 <FaArrowDown
-                  size={17}
+                  size={15}
                   className=" group-hover:text-[#ffb200] text-gray-700"
                 />
               </div>
@@ -156,10 +156,21 @@ const Beranda = () => {
                 <p className="mt-5 font-montserrat text-[15px] title-color leading-7 pr-8">
                   Ikuti jejak pertunjukan dan kegiatan budaya wayang terkini di
                   berbagai daerah. Dari panggung rakyat hingga festival
-                  akbar—temukan acara terdekat dan jadilah bagian dari
-                  pelestarian warisan budaya Indonesia.
+                  akbar—temukan acara terdekat.
                 </p>
-                <div className="flex gap-x-5 my-8">
+                <div className="flex flex-wrap gap-5 mt-5">
+                  <div className="shadow w-full xs:w-auto cursor-pointer px-3 rounded py-2 bg-[#4E1F00]/80 hover:bg-[#4E1F00] ">
+                    <p className="font-montserrat text-sm text-white">
+                      Acara Terkini
+                    </p>
+                  </div>
+                  <div className="shadow w-full xs:w-auto cursor-pointer px-3 group hover:bg-[#4E1F00] rounded py-2 border border-gray-200 ">
+                    <p className="font-montserrat text-sm group-hover:text-white text-gray-700">
+                      Acara Sebelumnya
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-x-5 my-5">
                   <div
                     onClick={() => scroll("left")}
                     className="bg-[#4E1F00]/70 hover:bg-[#4E1F00] cursor-pointer h-12 w-12 rounded-full flex justify-center items-center"

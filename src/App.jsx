@@ -5,7 +5,7 @@ import Beranda from "./pages/Beranda";
 import Explore from "./pages/Explore";
 import Mentorship from "./pages/Mentorship";
 import DetailCategory from "./pages/DetailCategory";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const DataProvider = createContext(null);
 
