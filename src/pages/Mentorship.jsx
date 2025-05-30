@@ -25,7 +25,7 @@ const Mentorship = () => {
   return (
     <>
       <main>
-        <section className="h-[60vh] relative">
+        <section className="h-[540px] relative">
           <div className="bg-[#4E1F00] absolute opacity-70 top-0 left-0 right-0 h-full"></div>
           <img src={heroImage} className="w-full h-full object-cover" />
           <div className="flex max-w-7xl items-end mx-auto px-3 xl:px-0 absolute bottom-10 left-0 right-0">

@@ -41,6 +41,7 @@ const Beranda = () => {
     }
   }, [getUlasan, setUlasan]);
 
+  // Slider hero image
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setIsImage((e) => (e + 1) % imageData.length);
@@ -49,10 +50,12 @@ const Beranda = () => {
     return () => clearTimeout(timeOut);
   }, [isImage]);
 
+  // Faq
   const onFaqActive = (id) => {
     setFaqNums((nowId) => (nowId == id ? 0 : id));
   };
 
+  // event scroll
   const scroll = (dir) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
@@ -143,7 +146,7 @@ const Beranda = () => {
         </section>
 
         {/* News Event */}
-        <section className="max-w-full w-full md1:h-[80vh] px-3 xl:px-0 mt-10 mb-20">
+        <section className="max-w-full w-full md1:h-[500px] px-3 xl:px-0 mb-20">
           <div className="mx-auto max-w-7xl h-full ">
             <div className="md1:grid md1:grid-cols-5 h-full">
               <div className="col-span-2 flex justify-center flex-start  flex-col">
@@ -179,7 +182,7 @@ const Beranda = () => {
                   {dataEvents.map((e) => (
                     <div
                       key={e.title}
-                      className="h-[70vh] w-[50vh] rounded-xl relative overflow-hidden shadow-lg"
+                      className="h-[480px] w-[360px] rounded-xl relative overflow-hidden shadow-lg"
                     >
                       <img
                         src={e.image}
@@ -201,57 +204,55 @@ const Beranda = () => {
         </section>
 
         {/* Mengajak Section  */}
-        <section className="w-full px-3 xl:px-0 mb-25">
-          <div className="mx-auto md1:max-w-7xl h-[57vh] rounded-xl md1:rounded-3xl bg-[#74512D] overflow-hidden">
-            <div className="relative w-full h-full">
-              <div className="absolute z-10 w-full h-full bg-[#4E1F00]/80">
-                <div className="base:grid-cols-5 base:grid h-full">
-                  <div className="col-span-2 ">
-                    {/* <p className="text-white font-montserrat text-[12px] font-me">
+        <section className="w-full px-3 xl:px-0 mb-20">
+          <div className="mx-auto md1:max-w-7xl h-auto base:h-[400px] relative rounded-xl bg-[#74512D] overflow-hidden">
+            <video
+              className="w-full h-full object-cover loop absolute z-0 inset-x-0"
+              src={videoAsset}
+              autoPlay
+              loop
+              muted
+              disableRemotePlayback
+              playsInline
+            ></video>
+            <div className=" relative base:absolute z-10 w-full h-full bg-[#4E1F00]/80">
+              <div className="base:grid-cols-5 base:grid h-full">
+                <div className="col-span-2 ">
+                  {/* <p className="text-white font-montserrat text-[12px] font-me">
                       Pertunjukan Wayang Kulit oleh{" "}
                       <span className="underline">Dalang Ki Seno Nugroho</span>
                     </p> */}
-                  </div>
-                  <div className="base:col-span-3 flex flex-col p-8 md1:p-14">
-                    <p className="font-montserrat leading-8 font-medium text-white text-base base:text-[18px]">
-                      "Mari kenali lebih dekat seni pertunjukan wayang dan
-                      pelajari bagaimana cerita, suara, dan gerak bersatu
-                      menciptakan warisan budaya yang hidup hingga kini."
-                    </p>
-                    <div className="mt-6 md1:mt-10">
-                      <Link to={"/explore"}>
-                        <p className="text-white cursor-pointer underline font-medium font-montserrat text-sm">
-                          Explore Yuk!
-                        </p>
-                      </Link>
-                    </div>
+                </div>
+                <div className="base:col-span-3 flex flex-col p-8 md1:p-14">
+                  <p className="font-montserrat leading-8 font-medium text-white text-base base:text-[18px]">
+                    "Mari kenali lebih dekat seni pertunjukan wayang dan
+                    pelajari bagaimana cerita, suara, dan gerak bersatu
+                    menciptakan warisan budaya yang hidup hingga kini."
+                  </p>
+                  <div className="mt-6 md1:mt-10">
+                    <Link to={"/explore"}>
+                      <p className="text-white cursor-pointer underline font-medium font-montserrat text-sm">
+                        Explore Yuk!
+                      </p>
+                    </Link>
                   </div>
                 </div>
               </div>
-              <video
-                className="w-full h-full object-cover loop"
-                src={videoAsset}
-                autoPlay
-                loop
-                muted
-                disableRemotePlayback
-                playsInline
-              ></video>
             </div>
           </div>
         </section>
 
         {/* Testimoni Action */}
-        <section className="max-w-full mb-20 md1:h-[65vh] brder">
+        <section className="max-w-full mb-20 md1:h-[500px]">
           <div className="max-w-7xl w-full h-full mx-auto px-3 xl:px-0">
             <div className="grid grid-cols-1 md1:grid-cols-6 h-full">
-              <div className="col-span-4 h-[50vh] md1:h-auto  grid grid-cols-1 lgxs:grid-cols-2 gap-6 pr-0 lgxs:pr-6 pb-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+              <div className="col-span-4 h-[300px] md1:h-auto grid grid-cols-1 lgxs:grid-cols-2 gap-6 md1:pr-6 pb-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
                 {testimonials.map((e) => (
                   <div
                     key={e.id}
                     className={` ${
                       e.id == 1 ? "bg-[#4E1F00]/90" : ""
-                    } h-[28vh] rounded-xl shadow-lg  flex flex-col p-5 justify-between`}
+                    } h-[200px] rounded-xl shadow-lg border border-gray-100 flex flex-col p-5 justify-between`}
                   >
                     <p
                       className={`font-montserrat text-sm ${
@@ -293,7 +294,7 @@ const Beranda = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="w-full mt-10 mb-10 px-3 xl:px-0">
+        <section className="w-full mb-10 px-3 xl:px-0">
           <div className="max-w-7xl xl:mx-auto ">
             <div className="grid grid-cols-1 base:grid-cols-2 gap-x-10">
               <div className="col-span-1 w-full flex justify-start">
