@@ -31,6 +31,10 @@ export const dataMentorships = [
     image: mentor1,
     sanggar: "Sanggar Wayang Gogon Surakarta",
     nameMentor: "Bagus Pratama",
+    age: 20,
+    gender: "Laki-laki",
+    expertise: "Pedalangan",
+    experienceYears: 4,
     description: "Mentor muda berpengalaman dalam seni pedalangan wayang.",
   },
   {
@@ -38,6 +42,10 @@ export const dataMentorships = [
     image: mentor2,
     sanggar: "Sanggar Wayang Gogon Surakarta",
     nameMentor: "Rizky Wicaksono",
+    age: 20,
+    gender: "Laki-laki",
+    expertise: "Pedalangan modern",
+    experienceYears: 3,
     description: "Dalang muda dengan pendekatan modern dalam pewayangan.",
   },
   {
@@ -45,6 +53,10 @@ export const dataMentorships = [
     image: mentor3,
     sanggar: "Sanggar Wayang Gogon Surakarta",
     nameMentor: "Sutrisno",
+    age: 50,
+    gender: "Laki-laki",
+    expertise: "Gamelan & musik pengiring",
+    experienceYears: 32,
     description:
       "Ahli gamelan dan musik pengiring wayang dengan pengalaman 30+ tahun.",
   },
@@ -53,6 +65,10 @@ export const dataMentorships = [
     image: mentor4,
     sanggar: "Sanggar Wayang Gogon Surakarta",
     nameMentor: "Ratna Dewi",
+    age: 25,
+    gender: "Perempuan",
+    expertise: "Sinden / Vokal tradisional",
+    experienceYears: 7,
     description:
       "Sinden muda berbakat dengan suara khas dan teknik vokal kuat.",
   },

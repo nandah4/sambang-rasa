@@ -5,11 +5,13 @@ import { Dropdown } from "../components/ui/Dropdown";
 import { seniPlaces, dataMentorships } from "../data/dataMentorship";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import image1 from "./../assets/mentorship/sanggar_gogon.jpg";
+import mentor1 from "./../assets/mentorship/Mentor1.jpeg";
 import "leaflet/dist/leaflet.css";
 
 const Mentorship = () => {
   const [location, setLocation] = useState(null);
   const refScroll = useRef(null);
+  const [detailMentor, setDetailMentor] = useState(null);
 
   const scrollSide = (dir) => {
     if (refScroll.current) {
@@ -18,6 +20,16 @@ const Mentorship = () => {
         behavior: "smooth",
       });
     }
+  };
+
+  const clickMentor = (id) => {
+    const selected = dataMentorships.find((e) => e.id === id);
+    setDetailMentor(selected);
+
+    setTimeout(() => {
+      const el = document.querySelector("#mentordetail");
+      el.scrollIntoView({ behavior: "smooth" });
+    }, 400);
   };
 
   const placesFilter = seniPlaces.filter((e) => e.location == location);
@@ -129,7 +141,7 @@ const Mentorship = () => {
                     width: "100%",
                     height: "100%",
                     position: "relative",
-                    zIndex:"0"
+                    zIndex: "0",
                   }}
                 >
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -155,7 +167,7 @@ const Mentorship = () => {
         </section>
 
         {/* Discover Mentor */}
-        <section className="max-w-7xl mx-auto mb-3`0 px-3 xl:px-0">
+        <section className="max-w-7xl mx-auto px-3 xl:px-0 mb-30">
           <div className="flex flex-col gap-y-5">
             <div className="flex justify-between items-center flex-wrap">
               <div>
@@ -170,7 +182,9 @@ const Mentorship = () => {
 
               <div className="h-full flex gap-x-3 mt-5 md1:mt-0">
                 <div
-                  onClick={() => scrollSide("left")}
+                  onClick={() => {
+                    scrollSide("left");
+                  }}
                   className="p-3 cursor-pointer group hover:bg-[#4E1F00]/70 border border-gray-300 rounded-full"
                 >
                   <FaAngleLeft className="text-md group-hover:text-white" />
@@ -212,6 +226,12 @@ const Mentorship = () => {
                       <p className="mt-2 font-montserrat text-[13px] title-color">
                         {e.description}
                       </p>
+                      <button
+                        onClick={() => clickMentor(e.id)}
+                        className="bg-[#4E1F00]/80 cursor-pointer hover:bg-[#4E1F00] rounded w-full text-white font-montserrat text-sm py-2 mt-5"
+                      >
+                        Lihat Detail Mentor
+                      </button>
                     </div>
                   </div>
                 ))}
@@ -219,6 +239,62 @@ const Mentorship = () => {
             </div>
           </div>
         </section>
+
+        {detailMentor != null && (
+          <>
+            <section
+              id="mentordetail"
+              className="max-w-7xl overflow-hidden mx-auto px-3 xl:px-0 mb-30"
+            >
+              <h2 className="text-2xl font-montserrat title-color mb-5">
+                Mengenal Lebih Dekat {detailMentor.nameMentor}
+              </h2>
+              <div className="grid md1:grid-cols-2 mx-auto md1:h-[450px]">
+                <div className="col-span-1 h-[300px] md1:h-full w-full">
+                  <img
+                    src={detailMentor.image}
+                    className="w-full h-full object-center base:object-cover"
+                  />
+                </div>
+                <div className="col-span-1 h-full w-full flex flex-col justify-star mt-5 md1:mt-0 md1:pl-10">
+                  <h1 className="font-montserrat text-xl title-color font-medium">
+                    👤 {detailMentor.nameMentor}
+                  </h1>
+                  <p className="font-montserrat text-sm title-color my-5">
+                    {detailMentor.description}
+                  </p>
+
+                  <p className="font-montserrat text-lg title-color">
+                    👇🏻 Detail Mentor
+                  </p>
+                  <div className="p-7 bg-slate-50 rounded-lg mt-2">
+                    <ul className="flex flex-col gap-y-3">
+                      <li className="font-montserrat text-sm title-color">
+                        Umur<span className="pl-28">: {detailMentor.age}</span>
+                      </li>
+                      <li className="font-montserrat text-sm title-color">
+                        Jenis Kelamin
+                        <span className="pl-14">: {detailMentor.gender}</span>
+                      </li>
+                      <li className="font-montserrat text-sm title-color">
+                        Bidang
+                        <span className="pl-[102px]">
+                          : {detailMentor.expertise}
+                        </span>
+                      </li>
+                      <li className="font-montserrat text-sm title-color">
+                        Pengalaman
+                        <span className="pl-[63px]">
+                          : {detailMentor.experienceYears} Tahun
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </>
   );
