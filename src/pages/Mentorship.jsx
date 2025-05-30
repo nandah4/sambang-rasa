@@ -5,8 +5,14 @@ import { Dropdown } from "../components/ui/Dropdown";
 import { seniPlaces, dataMentorships } from "../data/dataMentorship";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import image1 from "./../assets/mentorship/sanggar_gogon.jpg";
-import mentor1 from "./../assets/mentorship/Mentor1.jpeg";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIconPng,
+});
 
 const Mentorship = () => {
   const [location, setLocation] = useState(null);
@@ -275,7 +281,10 @@ const Mentorship = () => {
                         Umur<span className="pl-28">: {detailMentor.age}</span>
                       </li>
                       <li className="font-montserrat text-sm title-color">
-                        Sanggar<span className="pl-[94px]">: {detailMentor.sanggar}</span>
+                        Sanggar
+                        <span className="pl-[94px]">
+                          : {detailMentor.sanggar}
+                        </span>
                       </li>
                       <li className="font-montserrat text-sm title-color">
                         Bidang
@@ -292,7 +301,9 @@ const Mentorship = () => {
                       <li className="font-montserrat text-sm title-color">
                         Karir
                         {detailMentor.journey.map((e) => (
-                          <li className="text-sm font-montserrat title-color pl-1 mb-1">‼️ {e}</li>
+                          <li className="text-sm font-montserrat title-color pl-1 mb-1">
+                            ‼️ {e}
+                          </li>
                         ))}
                       </li>
                     </ul>
