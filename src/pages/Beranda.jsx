@@ -107,7 +107,7 @@ const Beranda = () => {
         </section>
 
         {/* Sekilas Section */}
-        <section className="max-w-7xl my-20 mx-auto px-3 xl:px-0">
+        <section className="max-w-7xl my-30 mx-auto px-3 xl:px-0">
           <h2 className="text-3xl font-montserrat text-center mb-9 md1:mb-14">
             Fakta Menarik Tentang Wayang
           </h2>
@@ -146,7 +146,7 @@ const Beranda = () => {
         </section>
 
         {/* News Event */}
-        <section className="max-w-full w-full md1:h-[500px] px-3 xl:px-0 mb-20">
+        <section className="max-w-full w-full md1:h-[500px] px-3 xl:px-0 mb-30">
           <div className="mx-auto max-w-7xl h-full ">
             <div className="md1:grid md1:grid-cols-5 h-full">
               <div className="col-span-2 flex justify-center flex-start  flex-col">
@@ -215,7 +215,7 @@ const Beranda = () => {
         </section>
 
         {/* Mengajak Section  */}
-        <section className="w-full px-3 xl:px-0 mb-20">
+        <section className="w-full px-3 xl:px-0 mb-30">
           <div className="mx-auto md1:max-w-7xl h-auto base:h-[400px] relative rounded-xl bg-[#74512D] overflow-hidden">
             <video
               className="w-full h-full object-cover loop absolute z-0 inset-x-0"
@@ -254,7 +254,7 @@ const Beranda = () => {
         </section>
 
         {/* Testimoni Action */}
-        <section className="max-w-full mb-20 md1:h-[500px]">
+        <section className="max-w-full mb-30 md1:h-[500px]">
           <div className="max-w-7xl w-full h-full mx-auto px-3 xl:px-0">
             <div className="grid grid-cols-1 md1:grid-cols-6 h-full">
               <div className="col-span-4 h-[300px] md1:h-auto grid grid-cols-1 lgxs:grid-cols-2 gap-6 md1:pr-6 pb-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
@@ -305,7 +305,7 @@ const Beranda = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="w-full mb-10 px-3 xl:px-0">
+        <section className="w-full mb-30 px-3 xl:px-0">
           <div className="max-w-7xl xl:mx-auto ">
             <div className="grid grid-cols-1 base:grid-cols-2 gap-x-10">
               <div className="col-span-1 w-full flex justify-start">
@@ -329,7 +329,7 @@ const Beranda = () => {
         </section>
 
         {/* Ulasan */}
-        <section id="ulasan" className="mt-20 mb-30 px-3 xl:px-0">
+        <section id="ulasan" className="mb-30 px-3 xl:px-0">
           <div className="max-w-7xl h-auto mdcontact:h-[450px] mx-auto w-full relative rounded-xl overflow-hidden">
             <img
               src={categoryImage3}

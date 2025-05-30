@@ -37,7 +37,7 @@ const Mentorship = () => {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto my-20 px-3 xl:px-0">
+        <section className="max-w-7xl mx-auto my-30 px-3 xl:px-0">
           <div className="grid base:grid-cols-2 md:grid-cols-3">
             <div className="col-span-1 md:col-span-2 ">
               <p className="text-2xl font-montserrat title-color">
@@ -57,7 +57,7 @@ const Mentorship = () => {
         <section
           className={`${
             displayedPlace.length === 0 ? "md1:h-[65vh]" : "h-auto"
-          }  max-w-7xl mx-auto my-10 px-3 xl:px-0 -z-20`}
+          }  max-w-7xl mx-auto mb-30 px-3 xl:px-0 -z-20`}
         >
           <div className="grid grid-cols-1 md1:grid-cols-5">
             <div className="md1:col-span-3 md1:pr-5">
@@ -121,7 +121,7 @@ const Mentorship = () => {
               <h2 className=" md1:hidden text-2xl font-montserrat title-color mb-5">
                 Map Yang Mempermudah Anda
               </h2>
-              <div className="w-full h-full -z-10">
+              <div className="w-full h-full -z-50">
                 <MapContainer
                   center={[-7.5585649, 110.8509434]}
                   zoom={13}
@@ -129,6 +129,7 @@ const Mentorship = () => {
                     width: "100%",
                     height: "100%",
                     position: "relative",
+                    zIndex:"0"
                   }}
                 >
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -154,7 +155,7 @@ const Mentorship = () => {
         </section>
 
         {/* Discover Mentor */}
-        <section className="max-w-7xl mx-auto my-20 px-3 xl:px-0">
+        <section className="max-w-7xl mx-auto mb-3`0 px-3 xl:px-0">
           <div className="flex flex-col gap-y-5">
             <div className="flex justify-between items-center flex-wrap">
               <div>

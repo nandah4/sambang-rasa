@@ -25,7 +25,7 @@ const Explore = () => {
           </div>
         </section>
 
-        <section className="w-full my-20">
+        <section className="w-full my-30">
           <div className="max-w-7xl mx-auto w-full h-full px-3 xl:px-0">
             <div className="md1:grid md1:grid-cols-5 h-full">
               <div className="md1:col-span-2 flex items-center justify-start md1:pr-3  border-amber-400">
