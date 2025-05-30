@@ -120,7 +120,7 @@ const Mentorship = () => {
                         <p className="font-montserrat title-color mt-3 text-sm">
                           Lokasi Sanggar
                         </p>
-                        <p className="font-montserra title-color mt-1 text-[13px]">
+                        <p className="font-montserrat title-color mt-1 text-[13px]">
                           {el.detailLocation}
                         </p>
                       </div>
