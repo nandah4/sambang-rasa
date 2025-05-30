@@ -8,10 +8,16 @@ import image1 from "./../assets/mentorship/sanggar_gogon.jpg";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import markerIcon from "./../assets/icons/marker-icon.png";
+import markerShadow from "./../assets/icons/marker-shadow.png";
 
-L.Icon.Default.mergeOptions({
-  iconUrl: markerIconPng,
+const customIconLocation = new L.Icon({
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
 });
 
 const Mentorship = () => {
@@ -137,7 +143,7 @@ const Mentorship = () => {
               } w-full md1:col-span-2 md1:mt-0 mt-6 md1:pt-5 md1:pl-7`}
             >
               <h2 className=" md1:hidden text-2xl font-montserrat title-color mb-5">
-                Map Yang Mempermudah Anda
+                Peta Interaktif Lokasi Sanggar
               </h2>
               <div className="w-full h-full -z-50">
                 <MapContainer
@@ -151,7 +157,10 @@ const Mentorship = () => {
                   }}
                 >
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                  <Marker position={[-7.5585649, 110.8509434]}>
+                  <Marker
+                    position={[-7.5585649, 110.8509434]}
+                    icon={customIconLocation}
+                  >
                     <Popup>
                       <div>
                         <div className="h-20 w-full bg-amber-50 mb-2">
@@ -232,9 +241,10 @@ const Mentorship = () => {
                       <p className="mt-2 font-montserrat text-[13px] title-color">
                         {e.description}
                       </p>
+
                       <button
                         onClick={() => clickMentor(e.id)}
-                        className="bg-[#4E1F00]/80 cursor-pointer hover:bg-[#4E1F00] rounded w-full text-white font-montserrat text-sm py-2 mt-5"
+                        className=" w-full cursor-pointer hover:bg-[#4E1F00] rounded text-slate-700 hover:text-white font-montserrat text-sm py-2 px-4 mt-6"
                       >
                         Lihat Detail Mentor
                       </button>
